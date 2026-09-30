@@ -51,6 +51,8 @@ export default {
     try {
       const upstream = new URL("https://api.golemio.cz/v2/vehiclepositions");
       incoming.searchParams.forEach((value, key) => upstream.searchParams.append(key, value));
+      // Golemio defaults to only 100 records. MapaPID needs the complete PID snapshot.
+      if (!upstream.searchParams.has("limit")) upstream.searchParams.set("limit", "10000");
       const response = await fetch(upstream, {
         headers: {"X-Access-Token": env.GOLEMIO_API_KEY, "Accept": "application/json"},
       });
