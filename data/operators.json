@@ -81,5 +81,16 @@
       "AKV bus a. s.",
       "AKV BUS (Střední Čechy)"
     ]
+  },
+  "ARRIVA autobusy": {
+    "source_name": "ARRIVA autobusy",
+    "name": "ARRIVA autobusy a.s.",
+    "short_name": "ARRIVA autobusy",
+    "aliases": [
+      "ARRIVA autobusy a.s.",
+      "ARRIVA autobusy, a.s.",
+      "ARRIVA autobusy a. s.",
+      "ARRIVA AUTOBUSY (Čáslav)"
+    ]
   }
 }
