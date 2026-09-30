@@ -12,7 +12,7 @@
       "air_conditioned": true,
       "usb_chargers": true,
       "traction": "bus",
-      "livery": "PID",
+      "livery": "schéma PID, šedá s červenými svislými pruhy",
       "advertisement": null
     },
     {
@@ -26,7 +26,7 @@
       "air_conditioned": true,
       "usb_chargers": true,
       "traction": "bus",
-      "livery": "PID",
+      "livery": "schéma PID, šedá s červenými svislými pruhy",
       "advertisement": null
     },
     {
@@ -40,7 +40,7 @@
       "air_conditioned": true,
       "usb_chargers": null,
       "traction": "bus",
-      "livery": "PID",
+      "livery": "schéma PID, šedá s červenými svislými pruhy",
       "advertisement": null
     },
     {
@@ -54,7 +54,7 @@
       "air_conditioned": true,
       "usb_chargers": true,
       "traction": "bus",
-      "livery": "PID",
+      "livery": "schéma PID, šedá s červenými svislými pruhy",
       "advertisement": null
     },
     {
@@ -68,7 +68,7 @@
       "air_conditioned": true,
       "usb_chargers": null,
       "traction": "bus",
-      "livery": "PID",
+      "livery": "schéma PID, šedá s červenými svislými pruhy",
       "advertisement": null
     },
     {
@@ -82,7 +82,7 @@
       "air_conditioned": true,
       "usb_chargers": null,
       "traction": "bus",
-      "livery": null,
+      "livery": "schéma PID, šedá s červenými svislými pruhy",
       "advertisement": null
     },
     {
@@ -96,7 +96,7 @@
       "air_conditioned": true,
       "usb_chargers": null,
       "traction": "bus",
-      "livery": null,
+      "livery": "schéma PID, šedá s červenými svislými pruhy",
       "advertisement": null
     },
     {
@@ -110,7 +110,7 @@
       "air_conditioned": true,
       "usb_chargers": null,
       "traction": "bus",
-      "livery": null,
+      "livery": "schéma PID, šedá s červenými svislými pruhy",
       "advertisement": null
     },
     {
@@ -124,7 +124,7 @@
       "air_conditioned": true,
       "usb_chargers": null,
       "traction": "bus",
-      "livery": null,
+      "livery": "schéma PID, šedá s červenými svislými pruhy",
       "advertisement": null
     },
     {
@@ -138,7 +138,7 @@
       "air_conditioned": true,
       "usb_chargers": null,
       "traction": "bus",
-      "livery": "PID",
+      "livery": "schéma PID, šedá s červenými svislými pruhy",
       "advertisement": null
     },
     {
@@ -152,7 +152,7 @@
       "air_conditioned": true,
       "usb_chargers": null,
       "traction": "bus",
-      "livery": "PID",
+      "livery": "schéma PID, šedá s červenými svislými pruhy",
       "advertisement": null
     },
     {
@@ -166,7 +166,7 @@
       "air_conditioned": true,
       "usb_chargers": null,
       "traction": "bus",
-      "livery": "PID",
+      "livery": "schéma PID, šedá s červenými svislými pruhy",
       "advertisement": null
     },
     {
@@ -180,7 +180,7 @@
       "air_conditioned": true,
       "usb_chargers": null,
       "traction": "bus",
-      "livery": "PID",
+      "livery": "schéma PID, šedá s červenými svislými pruhy",
       "advertisement": null
     },
     {
@@ -194,7 +194,7 @@
       "air_conditioned": true,
       "usb_chargers": null,
       "traction": "bus",
-      "livery": "PID",
+      "livery": "schéma PID, šedá s červenými svislými pruhy",
       "advertisement": null
     },
     {
@@ -208,7 +208,7 @@
       "air_conditioned": true,
       "usb_chargers": null,
       "traction": "bus",
-      "livery": "PID",
+      "livery": "schéma PID, šedá s červenými svislými pruhy",
       "advertisement": null
     },
     {
@@ -222,7 +222,7 @@
       "air_conditioned": true,
       "usb_chargers": null,
       "traction": "bus",
-      "livery": "PID",
+      "livery": "schéma PID, šedá s červenými svislými pruhy",
       "advertisement": null
     }
   ]
