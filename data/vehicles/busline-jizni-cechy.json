@@ -252,6 +252,20 @@
       "traction": "bus",
       "livery": "bílá & polep IDESKA",
       "advertisement": null
+    },
+    {
+      "sa_id": 148926,
+      "operator": "BusLine jižní Čechy",
+      "ev": "17011",
+      "manufacturer": "ROŠERO - P",
+      "model": "ROŠERO - P First FCLLI",
+      "depot": "Tábor",
+      "wheelchair_accessible": null,
+      "air_conditioned": true,
+      "usb_chargers": null,
+      "traction": "bus",
+      "livery": "schéma IDESKA, tmavě zelená se zelenými pruhy",
+      "advertisement": null
     }
   ]
 }
