@@ -17,6 +17,7 @@
     "arriva-autobusy.json",
     "autobusova-doprava-kohout.json",
     "busline-jizni-cechy.json",
-    "busline-khk.json"
+    "busline-khk.json",
+    "arriva-city.json"
   ]
 }
