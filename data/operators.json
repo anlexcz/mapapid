@@ -92,5 +92,68 @@
       "ARRIVA autobusy a. s.",
       "ARRIVA AUTOBUSY (Čáslav)"
     ]
+  },
+  "ARRIVA CITY": {
+    "source_name": "ARRIVA CITY",
+    "name": "ARRIVA CITY a.s.",
+    "short_name": "ARRIVA CITY",
+    "aliases": [
+      "ARRIVA CITY a.s.",
+      "ARRIVA CITY, a.s.",
+      "ARRIVA CITY a. s.",
+      "ARRIVA CITY s.r.o.",
+      "ARRIVA CITY, s.r.o.",
+      "ARRIVA CITY (Jílové u Prahy)",
+      "ARRIVA CITY (Kladno)",
+      "ARRIVA CITY (Malešice)"
+    ]
+  },
+  "ARRIVA STŘEDNÍ ČECHY": {
+    "source_name": "ARRIVA STŘEDNÍ ČECHY",
+    "name": "ARRIVA STŘEDNÍ ČECHY s.r.o.",
+    "short_name": "ARRIVA STŘEDNÍ ČECHY",
+    "aliases": [
+      "ARRIVA STŘEDNÍ ČECHY s.r.o.",
+      "ARRIVA STŘEDNÍ ČECHY, s.r.o.",
+      "ARRIVA STŘEDNÍ ČECHY s. r. o.",
+      "ARRIVA SČ (Hořovice)",
+      "ARRIVA SČ (Králův Dvůr)",
+      "ARRIVA SČ (Mladá Boleslav)",
+      "ARRIVA SČ (Příbram)"
+    ]
+  },
+  "Autobusová doprava Kohout": {
+    "source_name": "Autobusová doprava Kohout",
+    "name": "Autobusová doprava Kohout s.r.o.",
+    "short_name": "Autobusová doprava Kohout",
+    "aliases": [
+      "Autobusová doprava Kohout s.r.o.",
+      "Autobusová doprava Kohout, s.r.o.",
+      "Autobusová doprava Kohout s. r. o.",
+      "AUT. DOPRAVA KOHOUT"
+    ]
+  },
+  "BusLine jižní Čechy": {
+    "source_name": "BusLine jižní Čechy",
+    "name": "BusLine jižní Čechy s.r.o.",
+    "short_name": "BusLine jižní Čechy",
+    "aliases": [
+      "BusLine jižní Čechy s.r.o.",
+      "BusLine jižní Čechy, s.r.o.",
+      "BusLine jižní Čechy s. r. o.",
+      "BUSLINE JČ (Tábor)"
+    ]
+  },
+  "BusLine KHK": {
+    "source_name": "BusLine KHK",
+    "name": "BusLine KHK s.r.o.",
+    "short_name": "BusLine KHK",
+    "aliases": [
+      "BusLine KHK s.r.o.",
+      "BusLine KHK, s.r.o.",
+      "BusLine KHK s. r. o.",
+      "BUSLINE KHK (Jičín)",
+      "BUSLINE KHK (Hradec Králové)"
+    ]
   }
 }
