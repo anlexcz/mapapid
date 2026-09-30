@@ -7,14 +7,20 @@ $('markerPrimary').value=primary;$('markerPrimaryTop').value=primary;$('smoothMo
 ['search','operator','vehicleType','line','order'].forEach(id=>$(id).addEventListener(id==='operator'||id==='vehicleType'?'change':'input',render));
 document.querySelectorAll('.chips button').forEach(b=>b.onclick=()=>{typeChip=b.dataset.type;document.querySelectorAll('.chips button').forEach(x=>x.classList.toggle('active',x===b));render()});
 map.on('zoomend',renderMarkers);
+function keyPart(x){return String(x??'').trim().toLocaleLowerCase('cs-CZ')}
+function vehicleKey(operator,traction,ev){return [operator,traction,ev].map(keyPart).join('|')}
+function operatorConfig(op){return operatorNames[op]||Object.values(operatorNames).find(x=>[x.name,x.short_name,...(x.aliases||[])].filter(Boolean).some(a=>keyPart(a)===keyPart(op)))||null}
+function canonicalOperator(op){return operatorConfig(op)?.source_name||op}
 async function loadVehicleData(){try{
-  const [vr,or]=await Promise.all([fetch('./data/vehicles/lamer.json',{cache:'no-store'}),fetch('./data/operators.json',{cache:'no-store'})]);
-  if(vr.ok){const d=await vr.json();for(const x of d.vehicles||[])vehicleDb.set([String(x.operator||d.operator||''),String(x.traction||''),String(x.ev||'')].join('|').toLowerCase(),x)}
-  if(or.ok)operatorNames=await or.json();
+  const mr=await fetch('./data/vehicles/index.json',{cache:'no-store'});if(!mr.ok)throw Error('Vehicle manifest HTTP '+mr.status);
+  const manifest=await mr.json(),files=manifest.files||[];
+  const [or,...responses]=await Promise.all([fetch('./data/operators.json',{cache:'no-store'}),...files.map(f=>fetch('./data/vehicles/'+f,{cache:'no-store'}))]);
+  if(or.ok)operatorNames=await or.json();vehicleDb.clear();
+  for(let i=0;i<responses.length;i++){const r=responses[i];if(!r.ok){console.warn('Vehicle DB file',files[i],r.status);continue}const d=await r.json();for(const x of d.vehicles||[]){const op=x.operator||d.operator||'';if(!op||!x.traction||x.ev==null)continue;const k=vehicleKey(op,x.traction,x.ev);if(vehicleDb.has(k))console.warn('Duplicate vehicle key',k);vehicleDb.set(k,x)}}
 }catch(e){console.warn('Vehicle DB:',e)}}
 function tractionOf(v){const t=String(v.type||'').toLowerCase();return t.includes('tram')?'tram':t.includes('trolej')?'trolleybus':t.includes('bus')?'bus':''}
-function vehicleMeta(v){const tr=tractionOf(v),ev=String(v.ev||''),op=String(v.operator||'');let m=vehicleDb.get([op,tr,ev].join('|').toLowerCase());if(m)return m;for(const [k,x] of vehicleDb)if(String(x.ev)===ev&&String(x.traction)===tr&&(op.toLowerCase().includes('lamer')||String(x.operator).toLowerCase().includes('lamer')))return x;return null}
-function operatorLabel(op){const x=operatorNames[op];return x?.short_name||x?.name||op}
+function vehicleMeta(v){const tr=tractionOf(v),ev=String(v.ev||''),op=canonicalOperator(v.operator);if(!tr||!ev||!op)return null;return vehicleDb.get(vehicleKey(op,tr,ev))||null}
+function operatorLabel(op){const x=operatorConfig(op);return x?.short_name||x?.name||op}
 function canonTrip(id){return String(id||'').replace(/_\d{6}$/,'')}
 function norm(v){const p=v.properties||v,t=p.trip||{},cis=t.cis||{},g=t.gtfs||{},lp=p.last_position||{},vt=t.vehicle_type||{};const seq=t.sequence_id;return{id:t.vehicle_registration_number??v.id??g.trip_id,lat:v.geometry?.coordinates?.[1],lng:v.geometry?.coordinates?.[0],line:g.route_short_name||g.route_id||'',tripId:g.trip_id||'',order:seq!==null&&seq!==undefined&&seq!==''?seq:(cis.trip_number??''),ev:t.vehicle_registration_number??'',operator:t.agency_name?.real||t.agency_name?.scheduled||'',type:vt.description_cs||vt.description_en||vt.id||'',sequenceId:seq??'',delay:lp.delay?.actual??'',lastStop:lp.last_stop||null,nextStop:lp.next_stop||null,bearing:lp.bearing??'',headsign:g.trip_headsign||'',observed:lp.origin_timestamp||'',raw:v}}
 function populate(){for(const [id,key,label] of [['operator','operator','Všichni dopravci'],['vehicleType','type','Všechny typy vozů']]){const s=$(id),old=s.value,vs=[...new Set(vehicles.map(v=>v[key]).filter(Boolean))].sort();s.innerHTML='<option value="">'+label+'</option>'+vs.map(x=>'<option>'+esc(x)+'</option>').join('');s.value=old}}
