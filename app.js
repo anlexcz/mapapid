@@ -1,5 +1,5 @@
 const C=window.MAPAPID_CONFIG||{};const map=L.map('map',{zoomControl:false}).setView([50.0755,14.4378],12);
-L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{attribution:'© OpenStreetMap © CARTO',subdomains:'abcd',maxZoom:20}).addTo(map);
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© OpenStreetMap',maxZoom:19,className:'base-tiles'}).addTo(map);
 L.control.zoom({position:'bottomleft'}).addTo(map);
 let vehicles=[],gtfs=null,routeLayer=null,selectedId=null,selectedTrip=null,lastRefresh=0,nextRefresh=0,following=false,cardExpanded=false;const routeCache=new Map(),markerMap=new Map();let primary=localStorage.getItem('mapapid-marker')||'line',typeChip='',smooth=localStorage.getItem('mapapid-smooth')!=='0';const $=id=>document.getElementById(id);
 $('filterBtn').onclick=()=>$('sheet').classList.add('open');$('closeSheet').onclick=()=>$('sheet').classList.remove('open');$('locate').onclick=()=>map.locate({setView:true,maxZoom:16});$('backTrip').onclick=()=>$('tripPage').hidden=true;
