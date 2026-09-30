@@ -40,3 +40,9 @@
   .leaflet-control-zoom a{width:32px!important;height:32px!important;line-height:31px!important;border:0!important;border-left:1px solid #ddd!important}
   .leaflet-control-zoom a:first-child{border-left:0!important}
 }
+
+/* Mobile vehicle panel: never cover more than half the viewport */
+@media(max-width:799px){
+  .sheet{max-height:50dvh}
+  .vehicle-list{overflow-y:auto;min-height:0}
+}
