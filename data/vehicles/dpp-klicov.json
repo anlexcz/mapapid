@@ -4102,6 +4102,20 @@
       "traction": "trolleybus",
       "livery": "městské schéma, červeno-bílá",
       "advertisement": null
+    },
+    {
+      "sa_id": 92967,
+      "operator": "Dopravní podnik hl. m. Prahy",
+      "ev": "5093",
+      "manufacturer": "SOR",
+      "model": "SOR NB 18",
+      "depot": "Klíčov",
+      "wheelchair_accessible": null,
+      "air_conditioned": true,
+      "usb_chargers": null,
+      "traction": "bus",
+      "livery": "městské schéma, červeno-bílá",
+      "advertisement": null
     }
   ]
 }
