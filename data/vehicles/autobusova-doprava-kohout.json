@@ -1,0 +1,33 @@
+{
+  "operator": "Autobusová doprava Kohout",
+  "vehicles": [
+    {
+      "sa_id": 84151,
+      "operator": "Autobusová doprava Kohout",
+      "ev": "1206",
+      "manufacturer": "SOR",
+      "model": "SOR C 9,5",
+      "depot": null,
+      "wheelchair_accessible": null,
+      "air_conditioned": null,
+      "usb_chargers": null,
+      "traction": "bus",
+      "livery": "schéma PID, šedá s červenými svislými pruhy",
+      "advertisement": null
+    },
+    {
+      "sa_id": 127087,
+      "operator": "Autobusová doprava Kohout",
+      "ev": "1207",
+      "manufacturer": "SOR",
+      "model": "SOR ICN 9,5",
+      "depot": null,
+      "wheelchair_accessible": null,
+      "air_conditioned": true,
+      "usb_chargers": null,
+      "traction": "bus",
+      "livery": "schéma PID, šedá s červenými svislými pruhy",
+      "advertisement": null
+    }
+  ]
+}
