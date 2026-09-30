@@ -62,5 +62,24 @@
       "ČSAD POLKOST, spol. s r. o.",
       "ČSAD POLKOST spol. s r.o."
     ]
+  },
+  "AD STŘEDNÍ ČECHY": {
+    "source_name": "AD STŘEDNÍ ČECHY",
+    "name": "AD STŘEDNÍ ČECHY s.r.o.",
+    "short_name": "AD STŘEDNÍ ČECHY",
+    "aliases": [
+      "AD STŘEDNÍ ČECHY s.r.o.",
+      "AD STŘEDNÍ ČECHY, s.r.o."
+    ]
+  },
+  "AKV bus": {
+    "source_name": "AKV bus",
+    "name": "AKV bus a.s.",
+    "short_name": "AKV bus",
+    "aliases": [
+      "AKV bus a.s.",
+      "AKV bus a. s.",
+      "AKV BUS (Střední Čechy)"
+    ]
   }
 }
