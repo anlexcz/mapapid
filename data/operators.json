@@ -1,10 +1,18 @@
 {
   "Autodoprava Lamer": {
+    "source_name": "Autodoprava Lamer",
     "name": "Autodoprava Lamer",
-    "short_name": null
+    "short_name": null,
+    "aliases": []
   },
   "DP PRAHA": {
+    "source_name": "DP PRAHA",
     "name": "Dopravní podnik hl. m. Prahy, akciová společnost",
-    "short_name": "DPP"
+    "short_name": "DPP",
+    "aliases": [
+      "DPP",
+      "Dopravní podnik hl. m. Prahy, akciová společnost",
+      "Dopravní podnik hlavního města Prahy"
+    ]
   }
 }
