@@ -1,1442 +1,229 @@
 {
-  "schema_version": 1,
-  "operator": {
-    "name": "Autodoprava Lamer",
-    "sa_operator_id": 600,
-    "slug": "autodoprava-lamer"
-  },
-  "retrieved_at": "2026-09-30T17:43:03.040390+00:00",
-  "source": {
-    "name": "Seznam autobusů",
-    "url": "https://seznam-autobusu.cz/seznam?iddopravce=600",
-    "retrieved_from": "https://sa-proxy.kojban.cz/seznam?iddopravce=600",
-    "attribution": "seznam-autobusu.cz",
-    "scope": "44 records in the main operator list, including historical vehicles; historical loans/test vehicles in the separate zapujcka=1 list are excluded. Details verified for all 18 current vehicles."
-  },
-  "usage_notes": [
-    "Match realtime vehicles by operator AND current vehicle_registration_number; numbers are not globally unique.",
-    "Use current_by_registration_number only for current Lamer vehicles; old numbers in registration_numbers must not be used as current aliases.",
-    "Roman generations are source annotations and are excluded from the numeric realtime match key.",
-    "null equipment flags mean unknown; an omitted feature does not mean false.",
-    "wheelchair_accessible is not inferred from model names; prefer the current Golemio realtime flag.",
-    "State describes the relation/state in the Lamer list, while state_global is the global vehicle state from the detail.",
-    "This static snapshot is not automatically loaded by app.js."
-  ],
-  "counts": {
-    "total": 44,
-    "current": 18,
-    "historical": 26,
-    "by_state": {
-      "prodán/předán jinému dopravci": 18,
-      "vyřazen": 8,
-      "provozní": 17,
-      "v dílnách/v opravě": 1
-    }
-  },
-  "current_by_registration_number": {
-    "1273": 85045,
-    "1274": 88442,
-    "1275": 101646,
-    "1276": 97961,
-    "1280": 110919,
-    "1289": 70279,
-    "1290": 78229,
-    "1281": 81449,
-    "1282": 94565,
-    "1283": 98229,
-    "1284": 104582,
-    "1294": 85116,
-    "1295": 121008,
-    "1296": 121009,
-    "1297": 121010,
-    "1298": 121011
-  },
+  "operator": "Autodoprava Lamer",
   "vehicles": [
-    {
-      "sa_id": 78095,
-      "operator": "Autodoprava Lamer",
-      "vehicle_registration_number": null,
-      "registration_numbers": [],
-      "registration_plates": [
-        "?"
-      ],
-      "manufacturer": "Karosa",
-      "model": "Karosa LC 735",
-      "year_manufactured": null,
-      "operator_period": "Zdeněk Lamer, Kladno (? - ?)",
-      "state_code": "prod",
-      "state": "prodán/předán jinému dopravci",
-      "current_operator": false,
-      "wheelchair_accessible": null,
-      "air_conditioned": null,
-      "usb_chargers": null,
-      "equipment": [],
-      "source_url": "https://seznam-autobusu.cz/vuz/78095",
-      "retrieved_from": "https://sa-proxy.kojban.cz/vuz/78095",
-      "detail_verified": false,
-      "traction": "bus"
-    },
-    {
-      "sa_id": 17527,
-      "operator": "Autodoprava Lamer",
-      "vehicle_registration_number": null,
-      "registration_numbers": [],
-      "registration_plates": [
-        "KD 76-97"
-      ],
-      "manufacturer": "Karosa",
-      "model": "Karosa C 734.00",
-      "year_manufactured": 1983,
-      "operator_period": "Zdeněk Lamer, Kladno (2/1997 - 10/1999)",
-      "state_code": "prod",
-      "state": "prodán/předán jinému dopravci",
-      "current_operator": false,
-      "wheelchair_accessible": null,
-      "air_conditioned": null,
-      "usb_chargers": null,
-      "equipment": [],
-      "source_url": "https://seznam-autobusu.cz/vuz/17527",
-      "retrieved_from": "https://sa-proxy.kojban.cz/vuz/17527",
-      "detail_verified": false,
-      "traction": "bus"
-    },
-    {
-      "sa_id": 44941,
-      "operator": "Autodoprava Lamer",
-      "vehicle_registration_number": null,
-      "registration_numbers": [],
-      "registration_plates": [
-        "KD 99-96"
-      ],
-      "manufacturer": "Karosa",
-      "model": "Karosa LC 735.40",
-      "year_manufactured": 1988,
-      "operator_period": "Autodoprava Lamer (11/1998 - 2012?)",
-      "state_code": "zrus",
-      "state": "vyřazen",
-      "current_operator": false,
-      "wheelchair_accessible": null,
-      "air_conditioned": null,
-      "usb_chargers": null,
-      "equipment": [],
-      "source_url": "https://seznam-autobusu.cz/vuz/44941",
-      "retrieved_from": "https://sa-proxy.kojban.cz/vuz/44941",
-      "detail_verified": false,
-      "traction": "bus"
-    },
-    {
-      "sa_id": 17528,
-      "operator": "Autodoprava Lamer",
-      "vehicle_registration_number": null,
-      "registration_numbers": [],
-      "registration_plates": [
-        "KDA 04-82"
-      ],
-      "manufacturer": "Karosa",
-      "model": "Karosa LC 735.40",
-      "year_manufactured": 1989,
-      "operator_period": "Zdeněk Lamer, Kladno (12/2002 - 3/2006)",
-      "state_code": "zrus",
-      "state": "vyřazen",
-      "current_operator": false,
-      "wheelchair_accessible": null,
-      "air_conditioned": null,
-      "usb_chargers": null,
-      "equipment": [],
-      "source_url": "https://seznam-autobusu.cz/vuz/17528",
-      "retrieved_from": "https://sa-proxy.kojban.cz/vuz/17528",
-      "detail_verified": false,
-      "traction": "bus"
-    },
-    {
-      "sa_id": 45869,
-      "operator": "Autodoprava Lamer",
-      "vehicle_registration_number": null,
-      "registration_numbers": [],
-      "registration_plates": [
-        "KDA 07-38"
-      ],
-      "manufacturer": "Karosa",
-      "model": "Karosa LC 735.1011",
-      "year_manufactured": 1990,
-      "operator_period": "Autodoprava Lamer (6/2011 - ?)",
-      "state_code": "zrus",
-      "state": "vyřazen",
-      "current_operator": false,
-      "wheelchair_accessible": null,
-      "air_conditioned": null,
-      "usb_chargers": null,
-      "equipment": [],
-      "source_url": "https://seznam-autobusu.cz/vuz/45869",
-      "retrieved_from": "https://sa-proxy.kojban.cz/vuz/45869",
-      "detail_verified": false,
-      "traction": "bus"
-    },
-    {
-      "sa_id": 17529,
-      "operator": "Autodoprava Lamer",
-      "vehicle_registration_number": null,
-      "registration_numbers": [],
-      "registration_plates": [
-        "KDA 35-85"
-      ],
-      "manufacturer": "Karosa",
-      "model": "Karosa LC 736.1022",
-      "year_manufactured": 1991,
-      "operator_period": "Zdeněk Lamer, Kladno (6/1996 - 3/2005)",
-      "state_code": "prod",
-      "state": "prodán/předán jinému dopravci",
-      "current_operator": false,
-      "wheelchair_accessible": null,
-      "air_conditioned": null,
-      "usb_chargers": null,
-      "equipment": [],
-      "source_url": "https://seznam-autobusu.cz/vuz/17529",
-      "retrieved_from": "https://sa-proxy.kojban.cz/vuz/17529",
-      "detail_verified": false,
-      "traction": "bus"
-    },
-    {
-      "sa_id": 47704,
-      "operator": "Autodoprava Lamer",
-      "vehicle_registration_number": null,
-      "registration_numbers": [],
-      "registration_plates": [
-        "KDA 50-90"
-      ],
-      "manufacturer": "Karosa",
-      "model": "Karosa C 734.1340",
-      "year_manufactured": 1990,
-      "operator_period": "Zdeněk Lamer, Kladno (1/1999 - 7/2003)",
-      "state_code": "zrus",
-      "state": "vyřazen",
-      "current_operator": false,
-      "wheelchair_accessible": null,
-      "air_conditioned": null,
-      "usb_chargers": null,
-      "equipment": [],
-      "source_url": "https://seznam-autobusu.cz/vuz/47704",
-      "retrieved_from": "https://sa-proxy.kojban.cz/vuz/47704",
-      "detail_verified": false,
-      "traction": "bus"
-    },
-    {
-      "sa_id": 17530,
-      "operator": "Autodoprava Lamer",
-      "vehicle_registration_number": null,
-      "registration_numbers": [],
-      "registration_plates": [
-        "KDA 52-22"
-      ],
-      "manufacturer": "Karosa",
-      "model": "Karosa C 734.1340",
-      "year_manufactured": 1993,
-      "operator_period": "Autodoprava Lamer (6/1999 - 2014?)",
-      "state_code": "zrus",
-      "state": "vyřazen",
-      "current_operator": false,
-      "wheelchair_accessible": null,
-      "air_conditioned": null,
-      "usb_chargers": null,
-      "equipment": [],
-      "source_url": "https://seznam-autobusu.cz/vuz/17530",
-      "retrieved_from": "https://sa-proxy.kojban.cz/vuz/17530",
-      "detail_verified": false,
-      "traction": "bus"
-    },
-    {
-      "sa_id": 103948,
-      "operator": "Autodoprava Lamer",
-      "vehicle_registration_number": null,
-      "registration_numbers": [],
-      "registration_plates": [
-        "KDA 71-81"
-      ],
-      "manufacturer": "Fiat",
-      "model": "Fiat Ducato II 2.5 D",
-      "year_manufactured": 1997,
-      "operator_period": "Zdeněk Lamer, Kladno (2/1998 - 4/2003)",
-      "state_code": "prod",
-      "state": "prodán/předán jinému dopravci",
-      "current_operator": false,
-      "wheelchair_accessible": null,
-      "air_conditioned": null,
-      "usb_chargers": null,
-      "equipment": [],
-      "source_url": "https://seznam-autobusu.cz/vuz/103948",
-      "retrieved_from": "https://sa-proxy.kojban.cz/vuz/103948",
-      "detail_verified": false,
-      "traction": "bus"
-    },
-    {
-      "sa_id": 17531,
-      "operator": "Autodoprava Lamer",
-      "vehicle_registration_number": null,
-      "registration_numbers": [],
-      "registration_plates": [
-        "KLN 21-99",
-        "KLN 77-72"
-      ],
-      "manufacturer": "Karosa",
-      "model": "Karosa C 935E.1039",
-      "year_manufactured": 2000,
-      "operator_period": "Autodoprava Lamer (12/2000 - 10/2013)",
-      "state_code": "prod",
-      "state": "prodán/předán jinému dopravci",
-      "current_operator": false,
-      "wheelchair_accessible": null,
-      "air_conditioned": null,
-      "usb_chargers": null,
-      "equipment": [],
-      "source_url": "https://seznam-autobusu.cz/vuz/17531",
-      "retrieved_from": "https://sa-proxy.kojban.cz/vuz/17531",
-      "detail_verified": false,
-      "traction": "bus"
-    },
-    {
-      "sa_id": 17391,
-      "operator": "Autodoprava Lamer",
-      "vehicle_registration_number": null,
-      "registration_numbers": [],
-      "registration_plates": [
-        "1S3 2225"
-      ],
-      "manufacturer": "Karosa",
-      "model": "Karosa C 955.1073",
-      "year_manufactured": 2002,
-      "operator_period": "Autodoprava Lamer (4/2002 - 5/2017)",
-      "state_code": "prod",
-      "state": "prodán/předán jinému dopravci",
-      "current_operator": false,
-      "wheelchair_accessible": null,
-      "air_conditioned": null,
-      "usb_chargers": null,
-      "equipment": [],
-      "source_url": "https://seznam-autobusu.cz/vuz/17391",
-      "retrieved_from": "https://sa-proxy.kojban.cz/vuz/17391",
-      "detail_verified": false,
-      "traction": "bus"
-    },
-    {
-      "sa_id": 17392,
-      "operator": "Autodoprava Lamer",
-      "vehicle_registration_number": null,
-      "registration_numbers": [],
-      "registration_plates": [
-        "3S5 7707"
-      ],
-      "manufacturer": "Karosa",
-      "model": "Karosa C 734",
-      "year_manufactured": null,
-      "operator_period": "Autodoprava Lamer (2006 - 2014)",
-      "state_code": "prod",
-      "state": "prodán/předán jinému dopravci",
-      "current_operator": false,
-      "wheelchair_accessible": null,
-      "air_conditioned": null,
-      "usb_chargers": null,
-      "equipment": [],
-      "source_url": "https://seznam-autobusu.cz/vuz/17392",
-      "retrieved_from": "https://sa-proxy.kojban.cz/vuz/17392",
-      "detail_verified": false,
-      "traction": "bus"
-    },
-    {
-      "sa_id": 56552,
-      "operator": "Autodoprava Lamer",
-      "vehicle_registration_number": null,
-      "registration_numbers": [],
-      "registration_plates": [
-        "5Z5 7275"
-      ],
-      "manufacturer": "Karosa",
-      "model": "Karosa C 935.1034 Récréo",
-      "year_manufactured": 2001,
-      "operator_period": "Autodoprava Lamer (1/2016 - 9/2018)",
-      "state_code": "prod",
-      "state": "prodán/předán jinému dopravci",
-      "current_operator": false,
-      "wheelchair_accessible": null,
-      "air_conditioned": null,
-      "usb_chargers": null,
-      "equipment": [],
-      "source_url": "https://seznam-autobusu.cz/vuz/56552",
-      "retrieved_from": "https://sa-proxy.kojban.cz/vuz/56552",
-      "detail_verified": false,
-      "traction": "bus"
-    },
-    {
-      "sa_id": 17525,
-      "operator": "Autodoprava Lamer",
-      "vehicle_registration_number": null,
-      "registration_numbers": [],
-      "registration_plates": [
-        "8S9 7771"
-      ],
-      "manufacturer": "SOR",
-      "model": "SOR C 7,5",
-      "year_manufactured": 1997,
-      "operator_period": "Autodoprava Lamer (11/2008 - 9/2011)",
-      "state_code": "prod",
-      "state": "prodán/předán jinému dopravci",
-      "current_operator": false,
-      "wheelchair_accessible": null,
-      "air_conditioned": null,
-      "usb_chargers": null,
-      "equipment": [],
-      "source_url": "https://seznam-autobusu.cz/vuz/17525",
-      "retrieved_from": "https://sa-proxy.kojban.cz/vuz/17525",
-      "detail_verified": false,
-      "traction": "bus"
-    },
-    {
-      "sa_id": 38528,
-      "operator": "Autodoprava Lamer",
-      "vehicle_registration_number": null,
-      "registration_numbers": [],
-      "registration_plates": [
-        "1SM 7003"
-      ],
-      "manufacturer": "Karosa",
-      "model": "Karosa C 935.1034 Récréo",
-      "year_manufactured": 1998,
-      "operator_period": "Autodoprava Lamer (12/2010 - 4/2015)",
-      "state_code": "prod",
-      "state": "prodán/předán jinému dopravci",
-      "current_operator": false,
-      "wheelchair_accessible": null,
-      "air_conditioned": null,
-      "usb_chargers": null,
-      "equipment": [],
-      "source_url": "https://seznam-autobusu.cz/vuz/38528",
-      "retrieved_from": "https://sa-proxy.kojban.cz/vuz/38528",
-      "detail_verified": false,
-      "traction": "bus"
-    },
-    {
-      "sa_id": 40460,
-      "operator": "Autodoprava Lamer",
-      "vehicle_registration_number": null,
-      "registration_numbers": [],
-      "registration_plates": [
-        "2SX 1511"
-      ],
-      "manufacturer": "Irisbus",
-      "model": "Irisbus Evadys H 12M",
-      "year_manufactured": 2013,
-      "operator_period": "Autodoprava Lamer (od 12/2013)",
-      "state_code": "zar",
-      "state": "provozní",
-      "current_operator": true,
-      "wheelchair_accessible": null,
-      "air_conditioned": true,
-      "usb_chargers": null,
-      "equipment": [
-        "klimatizace",
-        "skibox",
-        "od ?: tažné zařízení"
-      ],
-      "source_url": "https://seznam-autobusu.cz/vuz/40460",
-      "retrieved_from": "https://sa-proxy.kojban.cz/vuz/40460",
-      "detail_verified": true,
-      "traction": "bus",
-      "equipment_text": "klimatizace, skibox; od ?: tažné zařízení",
-      "vin": "VNESFR1600M018394",
-      "technical_description": "Irisbus Evadys H 12M rozložení dveří: 1-1-0",
-      "current_registration_plate": "2SX 1511",
-      "state_global": "provozní",
-      "source_updated": "25. 6. 2022."
-    },
-    {
-      "sa_id": 28534,
-      "operator": "Autodoprava Lamer",
-      "vehicle_registration_number": null,
-      "registration_numbers": [],
-      "registration_plates": [
-        "3SI 6366"
-      ],
-      "manufacturer": "Karosa",
-      "model": "Karosa C 934E.1351",
-      "year_manufactured": 1999,
-      "operator_period": "Autodoprava Lamer (11/2014 - 5/2016)",
-      "state_code": "prod",
-      "state": "prodán/předán jinému dopravci",
-      "current_operator": false,
-      "wheelchair_accessible": null,
-      "air_conditioned": null,
-      "usb_chargers": null,
-      "equipment": [],
-      "source_url": "https://seznam-autobusu.cz/vuz/28534",
-      "retrieved_from": "https://sa-proxy.kojban.cz/vuz/28534",
-      "detail_verified": false,
-      "traction": "bus"
-    },
-    {
-      "sa_id": 9954,
-      "operator": "Autodoprava Lamer",
-      "vehicle_registration_number": null,
-      "registration_numbers": [
-        {
-          "number": "1270",
-          "generation": null,
-          "current": false
-        }
-      ],
-      "registration_plates": [
-        "5U3 8929"
-      ],
-      "manufacturer": "STRATOS AUTO",
-      "model": "STRATOS AUTO Iveco Stratos LE 37",
-      "year_manufactured": 2009,
-      "operator_period": "Autodoprava Lamer (11/2017 - 2021)",
-      "state_code": "zrus",
-      "state": "vyřazen",
-      "current_operator": false,
-      "wheelchair_accessible": null,
-      "air_conditioned": null,
-      "usb_chargers": null,
-      "equipment": [],
-      "source_url": "https://seznam-autobusu.cz/vuz/9954",
-      "retrieved_from": "https://sa-proxy.kojban.cz/vuz/9954",
-      "detail_verified": false,
-      "traction": "bus"
-    },
-    {
-      "sa_id": 17526,
-      "operator": "Autodoprava Lamer",
-      "vehicle_registration_number": null,
-      "registration_numbers": [
-        {
-          "number": "1271",
-          "generation": null,
-          "current": false
-        }
-      ],
-      "registration_plates": [
-        "9S5 1116"
-      ],
-      "manufacturer": "Irisbus",
-      "model": "Irisbus Crossway 10,6M",
-      "year_manufactured": 2008,
-      "operator_period": "Autodoprava Lamer (7/2009 - 11/2023)",
-      "state_code": "prod",
-      "state": "prodán/předán jinému dopravci",
-      "current_operator": false,
-      "wheelchair_accessible": null,
-      "air_conditioned": null,
-      "usb_chargers": null,
-      "equipment": [],
-      "source_url": "https://seznam-autobusu.cz/vuz/17526",
-      "retrieved_from": "https://sa-proxy.kojban.cz/vuz/17526",
-      "detail_verified": false,
-      "traction": "bus"
-    },
-    {
-      "sa_id": 73608,
-      "operator": "Autodoprava Lamer",
-      "vehicle_registration_number": null,
-      "registration_numbers": [
-        {
-          "number": "1272",
-          "generation": null,
-          "current": false
-        }
-      ],
-      "registration_plates": [
-        "4SB 9200"
-      ],
-      "manufacturer": "",
-      "model": "Iveco ProBus Rapido",
-      "year_manufactured": 2010,
-      "operator_period": "Autodoprava Lamer (12/2017 - 2023)",
-      "state_code": "prod",
-      "state": "prodán/předán jinému dopravci",
-      "current_operator": false,
-      "wheelchair_accessible": null,
-      "air_conditioned": null,
-      "usb_chargers": null,
-      "equipment": [],
-      "source_url": "https://seznam-autobusu.cz/vuz/73608",
-      "retrieved_from": "https://sa-proxy.kojban.cz/vuz/73608",
-      "detail_verified": false,
-      "traction": "bus"
-    },
     {
       "sa_id": 85045,
       "operator": "Autodoprava Lamer",
-      "vehicle_registration_number": "1273",
-      "registration_numbers": [
-        {
-          "number": "1273",
-          "generation": null,
-          "current": true
-        }
-      ],
-      "registration_plates": [
-        "4ST 1616"
-      ],
+      "ev": "1273",
       "manufacturer": "Dekstra",
       "model": "Dekstra LE 37",
-      "year_manufactured": 2019,
-      "operator_period": "Autodoprava Lamer (od 10/2019)",
-      "state_code": "zar",
-      "state": "provozní",
-      "current_operator": true,
+      "depot": null,
       "wheelchair_accessible": null,
       "air_conditioned": true,
       "usb_chargers": true,
-      "equipment": [
-        "klimatizace",
-        "USB nabíječky"
-      ],
-      "source_url": "https://seznam-autobusu.cz/vuz/85045",
-      "retrieved_from": "https://sa-proxy.kojban.cz/vuz/85045",
-      "detail_verified": true,
       "traction": "bus",
-      "equipment_text": "klimatizace, USB nabíječky",
-      "vin": "ZCFC270D305307693",
-      "technical_description": "Dekstra LE 37 podvozek: Iveco Daily 70C17 rozložení dveří: 1-2",
-      "current_registration_plate": "4ST 1616",
-      "state_global": "provozní",
-      "source_updated": "18. 11. 2024."
+      "livery": "PID",
+      "advertisement": null
     },
     {
       "sa_id": 88442,
       "operator": "Autodoprava Lamer",
-      "vehicle_registration_number": "1274",
-      "registration_numbers": [
-        {
-          "number": "1274",
-          "generation": null,
-          "current": true
-        }
-      ],
-      "registration_plates": [
-        "4SU 9799"
-      ],
+      "ev": "1274",
       "manufacturer": "Dekstra",
       "model": "Dekstra LE 37",
-      "year_manufactured": 2020,
-      "operator_period": "Autodoprava Lamer (od 3/2020)",
-      "state_code": "zar",
-      "state": "provozní",
-      "current_operator": true,
+      "depot": null,
       "wheelchair_accessible": null,
       "air_conditioned": true,
       "usb_chargers": true,
-      "equipment": [
-        "klimatizace",
-        "USB nabíječky"
-      ],
-      "source_url": "https://seznam-autobusu.cz/vuz/88442",
-      "retrieved_from": "https://sa-proxy.kojban.cz/vuz/88442",
-      "detail_verified": true,
       "traction": "bus",
-      "equipment_text": "klimatizace, USB nabíječky",
-      "vin": "ZCFC670DX05321403",
-      "technical_description": "Dekstra LE 37 podvozek: Iveco Daily 70C17 rozložení dveří: 1-2",
-      "current_registration_plate": "4SU 9799",
-      "state_global": "provozní",
-      "source_updated": "6. 10. 2024."
+      "livery": "PID",
+      "advertisement": null
     },
     {
       "sa_id": 101646,
       "operator": "Autodoprava Lamer",
-      "vehicle_registration_number": "1275",
-      "registration_numbers": [
-        {
-          "number": "1275",
-          "generation": null,
-          "current": true
-        }
-      ],
-      "registration_plates": [
-        "5SM 9753"
-      ],
+      "ev": "1275",
       "manufacturer": "Isuzu",
       "model": "Isuzu NOVO Citi Life Class II.",
-      "year_manufactured": 2021,
-      "operator_period": "Autodoprava Lamer (od 14.1.2022)",
-      "state_code": "zar",
-      "state": "provozní",
-      "current_operator": true,
+      "depot": null,
       "wheelchair_accessible": null,
       "air_conditioned": true,
       "usb_chargers": null,
-      "equipment": [
-        "klimatizace"
-      ],
-      "source_url": "https://seznam-autobusu.cz/vuz/101646",
-      "retrieved_from": "https://sa-proxy.kojban.cz/vuz/101646",
-      "detail_verified": true,
       "traction": "bus",
-      "equipment_text": "klimatizace",
-      "vin": "NNAM0BTLAGB000141",
-      "technical_description": "Isuzu NOVO Citi Life Class II. rozložení dveří: 1-2",
-      "current_registration_plate": "5SM 9753",
-      "state_global": "provozní",
-      "source_updated": "6. 6. 2022."
+      "livery": "PID",
+      "advertisement": null
     },
     {
       "sa_id": 97961,
       "operator": "Autodoprava Lamer",
-      "vehicle_registration_number": "1276",
-      "registration_numbers": [
-        {
-          "number": "1276",
-          "generation": null,
-          "current": true
-        }
-      ],
-      "registration_plates": [
-        "5SL 4892"
-      ],
+      "ev": "1276",
       "manufacturer": "Isuzu",
       "model": "Isuzu NOVO Citi Life Class II.",
-      "year_manufactured": 2021,
-      "operator_period": "Autodoprava Lamer (od 9.10.2023)",
-      "state_code": "zar",
-      "state": "provozní",
-      "current_operator": true,
+      "depot": null,
       "wheelchair_accessible": null,
       "air_conditioned": true,
       "usb_chargers": true,
-      "equipment": [
-        "klimatizace",
-        "USB nabíječky"
-      ],
-      "source_url": "https://seznam-autobusu.cz/vuz/97961",
-      "retrieved_from": "https://sa-proxy.kojban.cz/vuz/97961",
-      "detail_verified": true,
       "traction": "bus",
-      "equipment_text": "klimatizace, USB nabíječky",
-      "vin": "NNAM0BTLAGB000140",
-      "technical_description": "Isuzu NOVO Citi Life Class II. rozložení dveří: 1-2",
-      "current_registration_plate": "5SL 4892",
-      "state_global": "provozní",
-      "source_updated": "27. 9. 2024."
+      "livery": "PID",
+      "advertisement": null
     },
     {
       "sa_id": 110919,
       "operator": "Autodoprava Lamer",
-      "vehicle_registration_number": "1280",
-      "registration_numbers": [
-        {
-          "number": "1280",
-          "generation": null,
-          "current": true
-        }
-      ],
-      "registration_plates": [
-        "5SP 8530"
-      ],
+      "ev": "1280",
       "manufacturer": "Iveco",
       "model": "Iveco Crossway LE LINE 10,8M",
-      "year_manufactured": 2022,
-      "operator_period": "Autodoprava Lamer (od 3.1.2023)",
-      "state_code": "zar",
-      "state": "provozní",
-      "current_operator": true,
+      "depot": null,
       "wheelchair_accessible": null,
       "air_conditioned": true,
       "usb_chargers": null,
-      "equipment": [
-        "klimatizace Thermo King",
-        "vnější informační panely Bustec (LED",
-        "oranžová)",
-        "37+2+1 míst k sezení"
-      ],
-      "source_url": "https://seznam-autobusu.cz/vuz/110919",
-      "retrieved_from": "https://sa-proxy.kojban.cz/vuz/110919",
-      "detail_verified": true,
       "traction": "bus",
-      "equipment_text": "klimatizace Thermo King, vnější informační panely Bustec (LED; oranžová), 37+2+1 míst k sezení",
-      "vin": "VNE5245P40M055678",
-      "technical_description": "Iveco Crossway LE LINE 10,8M motor: Iveco Cursor 9; 265 kW (Euro VI-E) převodovka: automatická, 4°, Voith Diwa 6 rozložení dveří: 1-2-0",
-      "current_registration_plate": "5SP 8530",
-      "state_global": "provozní",
-      "source_updated": "12. 5. 2025."
-    },
-    {
-      "sa_id": 56515,
-      "operator": "Autodoprava Lamer",
-      "vehicle_registration_number": null,
-      "registration_numbers": [
-        {
-          "number": "1281",
-          "generation": null,
-          "current": false
-        }
-      ],
-      "registration_plates": [
-        "5Z5 7146"
-      ],
-      "manufacturer": "Karosa",
-      "model": "Karosa Axer 12M C 956.1074",
-      "year_manufactured": 2003,
-      "operator_period": "Autodoprava Lamer (12/2015 - 1/2023)",
-      "state_code": "prod",
-      "state": "prodán/předán jinému dopravci",
-      "current_operator": false,
-      "wheelchair_accessible": null,
-      "air_conditioned": null,
-      "usb_chargers": null,
-      "equipment": [],
-      "source_url": "https://seznam-autobusu.cz/vuz/56515",
-      "retrieved_from": "https://sa-proxy.kojban.cz/vuz/56515",
-      "detail_verified": false,
-      "traction": "bus"
-    },
-    {
-      "sa_id": 17393,
-      "operator": "Autodoprava Lamer",
-      "vehicle_registration_number": null,
-      "registration_numbers": [
-        {
-          "number": "1282",
-          "generation": null,
-          "current": false
-        }
-      ],
-      "registration_plates": [
-        "3S8 5552"
-      ],
-      "manufacturer": "Karosa",
-      "model": "Karosa C 954E.1360",
-      "year_manufactured": 2004,
-      "operator_period": "Autodoprava Lamer (1/2005 - 1/2022)",
-      "state_code": "zrus",
-      "state": "vyřazen",
-      "current_operator": false,
-      "wheelchair_accessible": null,
-      "air_conditioned": null,
-      "usb_chargers": null,
-      "equipment": [],
-      "source_url": "https://seznam-autobusu.cz/vuz/17393",
-      "retrieved_from": "https://sa-proxy.kojban.cz/vuz/17393",
-      "detail_verified": false,
-      "traction": "bus"
-    },
-    {
-      "sa_id": 17394,
-      "operator": "Autodoprava Lamer",
-      "vehicle_registration_number": null,
-      "registration_numbers": [
-        {
-          "number": "1283",
-          "generation": null,
-          "current": false
-        }
-      ],
-      "registration_plates": [
-        "4S8 3331"
-      ],
-      "manufacturer": "Karosa",
-      "model": "Karosa Axer 12M C 956.1074",
-      "year_manufactured": 2005,
-      "operator_period": "Autodoprava Lamer (11/2005 - 1/2022)",
-      "state_code": "prod",
-      "state": "prodán/předán jinému dopravci",
-      "current_operator": false,
-      "wheelchair_accessible": null,
-      "air_conditioned": null,
-      "usb_chargers": null,
-      "equipment": [],
-      "source_url": "https://seznam-autobusu.cz/vuz/17394",
-      "retrieved_from": "https://sa-proxy.kojban.cz/vuz/17394",
-      "detail_verified": false,
-      "traction": "bus"
-    },
-    {
-      "sa_id": 34628,
-      "operator": "Autodoprava Lamer",
-      "vehicle_registration_number": null,
-      "registration_numbers": [
-        {
-          "number": "1284",
-          "generation": null,
-          "current": false
-        }
-      ],
-      "registration_plates": [
-        "2SI 6001"
-      ],
-      "manufacturer": "Karosa",
-      "model": "Karosa Axer 12,8M C 956.1076",
-      "year_manufactured": 2006,
-      "operator_period": "Autodoprava Lamer (12/2012 - 11/2023)",
-      "state_code": "prod",
-      "state": "prodán/předán jinému dopravci",
-      "current_operator": false,
-      "wheelchair_accessible": null,
-      "air_conditioned": null,
-      "usb_chargers": null,
-      "equipment": [],
-      "source_url": "https://seznam-autobusu.cz/vuz/34628",
-      "retrieved_from": "https://sa-proxy.kojban.cz/vuz/34628",
-      "detail_verified": false,
-      "traction": "bus"
-    },
-    {
-      "sa_id": 17395,
-      "operator": "Autodoprava Lamer",
-      "vehicle_registration_number": null,
-      "registration_numbers": [
-        {
-          "number": "1285",
-          "generation": null,
-          "current": false
-        }
-      ],
-      "registration_plates": [
-        "6S6 6663"
-      ],
-      "manufacturer": "Irisbus",
-      "model": "Irisbus Crossway 12M",
-      "year_manufactured": 2007,
-      "operator_period": "Autodoprava Lamer (6/2007 - 11/2023)",
-      "state_code": "zrus",
-      "state": "vyřazen",
-      "current_operator": false,
-      "wheelchair_accessible": null,
-      "air_conditioned": null,
-      "usb_chargers": null,
-      "equipment": [],
-      "source_url": "https://seznam-autobusu.cz/vuz/17395",
-      "retrieved_from": "https://sa-proxy.kojban.cz/vuz/17395",
-      "detail_verified": false,
-      "traction": "bus"
-    },
-    {
-      "sa_id": 58405,
-      "operator": "Autodoprava Lamer",
-      "vehicle_registration_number": null,
-      "registration_numbers": [
-        {
-          "number": "1288",
-          "generation": null,
-          "current": false
-        }
-      ],
-      "registration_plates": [
-        "4SA 6616"
-      ],
-      "manufacturer": "Iveco",
-      "model": "Iveco Crossway PRO 13M",
-      "year_manufactured": 2016,
-      "operator_period": "Autodoprava Lamer (11/2016 - 6/2026)",
-      "state_code": "prod",
-      "state": "prodán/předán jinému dopravci",
-      "current_operator": false,
-      "wheelchair_accessible": null,
-      "air_conditioned": null,
-      "usb_chargers": null,
-      "equipment": [],
-      "source_url": "https://seznam-autobusu.cz/vuz/58405",
-      "retrieved_from": "https://sa-proxy.kojban.cz/vuz/58405",
-      "detail_verified": false,
-      "traction": "bus"
-    },
-    {
-      "sa_id": 70279,
-      "operator": "Autodoprava Lamer",
-      "vehicle_registration_number": "1289",
-      "registration_numbers": [
-        {
-          "number": "1289",
-          "generation": null,
-          "current": true
-        }
-      ],
-      "registration_plates": [
-        "4SB 9922",
-        "5SJ 3291"
-      ],
-      "manufacturer": "Iveco",
-      "model": "Iveco Crossway LE LINE 12M",
-      "year_manufactured": 2017,
-      "operator_period": "Autodoprava Lamer (od 11/2017)",
-      "state_code": "zar",
-      "state": "provozní",
-      "current_operator": true,
-      "wheelchair_accessible": null,
-      "air_conditioned": true,
-      "usb_chargers": null,
-      "equipment": [
-        "klimatizace"
-      ],
-      "source_url": "https://seznam-autobusu.cz/vuz/70279",
-      "retrieved_from": "https://sa-proxy.kojban.cz/vuz/70279",
-      "detail_verified": true,
-      "traction": "bus",
-      "equipment_text": "klimatizace",
-      "vin": "VNE5246P30M032682",
-      "technical_description": "Iveco Crossway LE LINE 12M převodovka: manuální, 6°",
-      "current_registration_plate": "5SJ 3291",
-      "state_global": "provozní",
-      "source_updated": "3. 4. 2025."
-    },
-    {
-      "sa_id": 78229,
-      "operator": "Autodoprava Lamer",
-      "vehicle_registration_number": "1290",
-      "registration_numbers": [
-        {
-          "number": "1290",
-          "generation": null,
-          "current": true
-        }
-      ],
-      "registration_plates": [
-        "4SL 4446"
-      ],
-      "manufacturer": "Iveco",
-      "model": "Iveco Crossway LE LINE 12M",
-      "year_manufactured": 2018,
-      "operator_period": "Autodoprava Lamer (od 11/2018)",
-      "state_code": "zar",
-      "state": "provozní",
-      "current_operator": true,
-      "wheelchair_accessible": null,
-      "air_conditioned": true,
-      "usb_chargers": null,
-      "equipment": [
-        "klimatizace"
-      ],
-      "source_url": "https://seznam-autobusu.cz/vuz/78229",
-      "retrieved_from": "https://sa-proxy.kojban.cz/vuz/78229",
-      "detail_verified": true,
-      "traction": "bus",
-      "equipment_text": "klimatizace",
-      "vin": "VNE5246P10M037136",
-      "technical_description": "Iveco Crossway LE LINE 12M převodovka: manuální, 6°",
-      "current_registration_plate": "4SL 4446",
-      "state_global": "provozní",
-      "source_updated": "19. 4. 2026."
+      "livery": "PID",
+      "advertisement": null
     },
     {
       "sa_id": 81449,
       "operator": "Autodoprava Lamer",
-      "vehicle_registration_number": "1281",
-      "registration_numbers": [
-        {
-          "number": "1291",
-          "generation": null,
-          "current": false
-        },
-        {
-          "number": "1281",
-          "generation": "II",
-          "current": true
-        }
-      ],
-      "registration_plates": [
-        "4SN 2220"
-      ],
+      "ev": "1281",
       "manufacturer": "Iveco",
       "model": "Iveco Crossway LE LINE 12M",
-      "year_manufactured": 2019,
-      "operator_period": "Autodoprava Lamer (od 5/2019)",
-      "state_code": "zar",
-      "state": "provozní",
-      "current_operator": true,
+      "depot": null,
       "wheelchair_accessible": null,
       "air_conditioned": true,
       "usb_chargers": null,
-      "equipment": [
-        "klimatizace"
-      ],
-      "source_url": "https://seznam-autobusu.cz/vuz/81449",
-      "retrieved_from": "https://sa-proxy.kojban.cz/vuz/81449",
-      "detail_verified": true,
       "traction": "bus",
-      "equipment_text": "klimatizace",
-      "vin": "VNE5246P50M039228",
-      "technical_description": "Iveco Crossway LE LINE 12M převodovka: automatická 4°, Voith rozložení dveří: 1-2-0",
-      "current_registration_plate": "4SN 2220",
-      "state_global": "provozní",
-      "source_updated": "9. 3. 2025."
+      "livery": null,
+      "advertisement": null
     },
     {
       "sa_id": 94565,
       "operator": "Autodoprava Lamer",
-      "vehicle_registration_number": "1282",
-      "registration_numbers": [
-        {
-          "number": "1292",
-          "generation": null,
-          "current": false
-        },
-        {
-          "number": "1282",
-          "generation": "II",
-          "current": true
-        }
-      ],
-      "registration_plates": [
-        "4ST 1121"
-      ],
+      "ev": "1282",
       "manufacturer": "Iveco",
       "model": "Iveco Crossway LE LINE 12M",
-      "year_manufactured": 2020,
-      "operator_period": "Autodoprava Lamer (od 10/2020)",
-      "state_code": "zar",
-      "state": "provozní",
-      "current_operator": true,
+      "depot": null,
       "wheelchair_accessible": null,
       "air_conditioned": true,
       "usb_chargers": null,
-      "equipment": [
-        "klimatizace"
-      ],
-      "source_url": "https://seznam-autobusu.cz/vuz/94565",
-      "retrieved_from": "https://sa-proxy.kojban.cz/vuz/94565",
-      "detail_verified": true,
       "traction": "bus",
-      "equipment_text": "klimatizace",
-      "vin": "VNE5246P40M045280",
-      "technical_description": "Iveco Crossway LE LINE 12M převodovka: automatická 4°, Voith rozložení dveří: 1-2-0",
-      "current_registration_plate": "4ST 1121",
-      "state_global": "provozní",
-      "source_updated": "31. 7. 2024."
+      "livery": null,
+      "advertisement": null
     },
     {
       "sa_id": 98229,
       "operator": "Autodoprava Lamer",
-      "vehicle_registration_number": "1283",
-      "registration_numbers": [
-        {
-          "number": "1293",
-          "generation": null,
-          "current": false
-        },
-        {
-          "number": "1283",
-          "generation": "II",
-          "current": true
-        }
-      ],
-      "registration_plates": [
-        "5SA 3542"
-      ],
+      "ev": "1283",
       "manufacturer": "Iveco",
       "model": "Iveco Crossway LE LINE 12M",
-      "year_manufactured": 2021,
-      "operator_period": "Autodoprava Lamer (od 4/2021)",
-      "state_code": "zar",
-      "state": "provozní",
-      "current_operator": true,
+      "depot": null,
       "wheelchair_accessible": null,
       "air_conditioned": true,
       "usb_chargers": null,
-      "equipment": [
-        "klimatizace"
-      ],
-      "source_url": "https://seznam-autobusu.cz/vuz/98229",
-      "retrieved_from": "https://sa-proxy.kojban.cz/vuz/98229",
-      "detail_verified": true,
       "traction": "bus",
-      "equipment_text": "klimatizace",
-      "vin": "VNE5246P20M047948",
-      "technical_description": "Iveco Crossway LE LINE 12M převodovka: automatická 4°, Voith rozložení dveří: 1-2-0",
-      "current_registration_plate": "5SA 3542",
-      "state_global": "provozní",
-      "source_updated": "22. 5. 2024."
+      "livery": null,
+      "advertisement": null
     },
     {
       "sa_id": 104582,
       "operator": "Autodoprava Lamer",
-      "vehicle_registration_number": "1284",
-      "registration_numbers": [
-        {
-          "number": "1294",
-          "generation": null,
-          "current": false
-        },
-        {
-          "number": "1284",
-          "generation": "II",
-          "current": true
-        }
-      ],
-      "registration_plates": [
-        "5SJ 4484"
-      ],
+      "ev": "1284",
       "manufacturer": "Iveco",
       "model": "Iveco Crossway LE LINE 12M",
-      "year_manufactured": 2022,
-      "operator_period": "Autodoprava Lamer (od 14.2.2022)",
-      "state_code": "zar",
-      "state": "provozní",
-      "current_operator": true,
+      "depot": null,
       "wheelchair_accessible": null,
       "air_conditioned": true,
       "usb_chargers": null,
-      "equipment": [
-        "klimatizace"
-      ],
-      "source_url": "https://seznam-autobusu.cz/vuz/104582",
-      "retrieved_from": "https://sa-proxy.kojban.cz/vuz/104582",
-      "detail_verified": true,
       "traction": "bus",
-      "equipment_text": "klimatizace",
-      "vin": "VNE5246P70M051591",
-      "technical_description": "Iveco Crossway LE LINE 12M motor: Iveco Cursor 9; 265 kW (Euro VI-E) převodovka: automatická 4°, Voith rozložení dveří: 1-2-0",
-      "current_registration_plate": "5SJ 4484",
-      "state_global": "provozní",
-      "source_updated": "30. 10. 2025."
+      "livery": null,
+      "advertisement": null
+    },
+    {
+      "sa_id": 70279,
+      "operator": "Autodoprava Lamer",
+      "ev": "1289",
+      "manufacturer": "Iveco",
+      "model": "Iveco Crossway LE LINE 12M",
+      "depot": null,
+      "wheelchair_accessible": null,
+      "air_conditioned": true,
+      "usb_chargers": null,
+      "traction": "bus",
+      "livery": "PID",
+      "advertisement": null
+    },
+    {
+      "sa_id": 78229,
+      "operator": "Autodoprava Lamer",
+      "ev": "1290",
+      "manufacturer": "Iveco",
+      "model": "Iveco Crossway LE LINE 12M",
+      "depot": null,
+      "wheelchair_accessible": null,
+      "air_conditioned": true,
+      "usb_chargers": null,
+      "traction": "bus",
+      "livery": "PID",
+      "advertisement": null
     },
     {
       "sa_id": 85116,
       "operator": "Autodoprava Lamer",
-      "vehicle_registration_number": "1294",
-      "registration_numbers": [
-        {
-          "number": "1294",
-          "generation": "II",
-          "current": true
-        }
-      ],
-      "registration_plates": [
-        "7AT 6525"
-      ],
+      "ev": "1294",
       "manufacturer": "MAN",
       "model": "MAN NG 363 Lion’s City G",
-      "year_manufactured": 2019,
-      "operator_period": "Autodoprava Lamer (od 3/2025)",
-      "state_code": "zar",
-      "state": "provozní",
-      "current_operator": true,
+      "depot": null,
       "wheelchair_accessible": null,
       "air_conditioned": true,
       "usb_chargers": null,
-      "equipment": [
-        "klimatizace"
-      ],
-      "source_url": "https://seznam-autobusu.cz/vuz/85116",
-      "retrieved_from": "https://sa-proxy.kojban.cz/vuz/85116",
-      "detail_verified": true,
       "traction": "bus",
-      "equipment_text": "klimatizace",
-      "vin": "WMAA23ZZ1LF011935",
-      "technical_description": "MAN NG 363 Lion’s City G motor: MAN D 2066 LUH52; 265 kW (EURO VI-D) převodovka: automatická, 6°, ZF 6 AP 2000 EcoLife rozložení dveří: 2-2-2-0",
-      "current_registration_plate": "7AT 6525",
-      "state_global": "provozní",
-      "source_updated": "4. 1. 2026."
+      "livery": "PID",
+      "advertisement": null
     },
     {
       "sa_id": 121008,
       "operator": "Autodoprava Lamer",
-      "vehicle_registration_number": "1295",
-      "registration_numbers": [
-        {
-          "number": "1295",
-          "generation": null,
-          "current": true
-        }
-      ],
-      "registration_plates": [
-        "6SN 4864"
-      ],
+      "ev": "1295",
       "manufacturer": "MAN",
       "model": "MAN NG 360 Lion’s City 18C",
-      "year_manufactured": 2024,
-      "operator_period": "Autodoprava Lamer (od 2.12.2024)",
-      "state_code": "zar",
-      "state": "provozní",
-      "current_operator": true,
+      "depot": null,
       "wheelchair_accessible": null,
       "air_conditioned": true,
       "usb_chargers": null,
-      "equipment": [
-        "klimatizace"
-      ],
-      "source_url": "https://seznam-autobusu.cz/vuz/121008",
-      "retrieved_from": "https://sa-proxy.kojban.cz/vuz/121008",
-      "detail_verified": true,
       "traction": "bus",
-      "equipment_text": "klimatizace",
-      "vin": "WMA18CZZ1RF022389",
-      "technical_description": "MAN NG 360 Lion’s City 18C motor: MAN D 1556 LOH16; 265 kW (EURO VI-E) převodovka: automatická 6°, ZF Ecolife rozložení dveří: 2-2-2-0",
-      "current_registration_plate": "6SN 4864",
-      "state_global": "provozní",
-      "source_updated": "24. 8. 2026."
+      "livery": "PID",
+      "advertisement": null
     },
     {
       "sa_id": 121009,
       "operator": "Autodoprava Lamer",
-      "vehicle_registration_number": "1296",
-      "registration_numbers": [
-        {
-          "number": "1296",
-          "generation": null,
-          "current": true
-        }
-      ],
-      "registration_plates": [
-        "6SN 4855"
-      ],
+      "ev": "1296",
       "manufacturer": "MAN",
       "model": "MAN NG 360 Lion’s City 18C",
-      "year_manufactured": 2024,
-      "operator_period": "Autodoprava Lamer (od 16.11.2024)",
-      "state_code": "zar",
-      "state": "provozní",
-      "current_operator": true,
+      "depot": null,
       "wheelchair_accessible": null,
       "air_conditioned": true,
       "usb_chargers": null,
-      "equipment": [
-        "klimatizace"
-      ],
-      "source_url": "https://seznam-autobusu.cz/vuz/121009",
-      "retrieved_from": "https://sa-proxy.kojban.cz/vuz/121009",
-      "detail_verified": true,
       "traction": "bus",
-      "equipment_text": "klimatizace",
-      "vin": "WMA18CZZ3RF022393",
-      "technical_description": "MAN NG 360 Lion’s City 18C motor: MAN D 1556 LOH16; 265 kW (EURO VI-E) převodovka: automatická 6°, ZF Ecolife rozložení dveří: 2-2-2-0",
-      "current_registration_plate": "6SN 4855",
-      "state_global": "provozní",
-      "source_updated": "4. 4. 2026."
+      "livery": "PID",
+      "advertisement": null
     },
     {
       "sa_id": 121010,
       "operator": "Autodoprava Lamer",
-      "vehicle_registration_number": "1297",
-      "registration_numbers": [
-        {
-          "number": "1297",
-          "generation": null,
-          "current": true
-        }
-      ],
-      "registration_plates": [
-        "6SL 8912"
-      ],
+      "ev": "1297",
       "manufacturer": "MAN",
       "model": "MAN NG 360 Lion’s City 18C",
-      "year_manufactured": 2024,
-      "operator_period": "Autodoprava Lamer (od 4.11.2024)",
-      "state_code": "dilny",
-      "state": "v dílnách/v opravě",
-      "current_operator": true,
+      "depot": null,
       "wheelchair_accessible": null,
       "air_conditioned": true,
       "usb_chargers": null,
-      "equipment": [
-        "klimatizace"
-      ],
-      "source_url": "https://seznam-autobusu.cz/vuz/121010",
-      "retrieved_from": "https://sa-proxy.kojban.cz/vuz/121010",
-      "detail_verified": true,
       "traction": "bus",
-      "equipment_text": "klimatizace",
-      "vin": "WMA18CZZ2RF022448",
-      "technical_description": "MAN NG 360 Lion’s City 18C motor: MAN D 1556 LOH16; 265 kW (EURO VI-E) převodovka: automatická 6°, ZF Ecolife rozložení dveří: 2-2-2-0",
-      "current_registration_plate": "6SL 8912",
-      "state_global": "v dílnách/v opravě",
-      "source_updated": "15. 7. 2026."
+      "livery": "PID",
+      "advertisement": null
     },
     {
       "sa_id": 121011,
       "operator": "Autodoprava Lamer",
-      "vehicle_registration_number": "1298",
-      "registration_numbers": [
-        {
-          "number": "1298",
-          "generation": null,
-          "current": true
-        }
-      ],
-      "registration_plates": [
-        "6SN 4867"
-      ],
+      "ev": "1298",
       "manufacturer": "MAN",
       "model": "MAN NG 360 Lion’s City 18C",
-      "year_manufactured": 2024,
-      "operator_period": "Autodoprava Lamer (od 16.11.2024)",
-      "state_code": "zar",
-      "state": "provozní",
-      "current_operator": true,
+      "depot": null,
       "wheelchair_accessible": null,
       "air_conditioned": true,
       "usb_chargers": null,
-      "equipment": [
-        "klimatizace"
-      ],
-      "source_url": "https://seznam-autobusu.cz/vuz/121011",
-      "retrieved_from": "https://sa-proxy.kojban.cz/vuz/121011",
-      "detail_verified": true,
       "traction": "bus",
-      "equipment_text": "klimatizace",
-      "vin": "WMA18CZZ9RF022396",
-      "technical_description": "MAN NG 360 Lion’s City 18C motor: MAN D 1556 LOH16; 265 kW (EURO VI-E) převodovka: automatická 6°, ZF Ecolife rozložení dveří: 2-2-2-0",
-      "current_registration_plate": "6SN 4867",
-      "state_global": "provozní",
-      "source_updated": "17. 9. 2026."
-    },
-    {
-      "sa_id": 62974,
-      "operator": "Autodoprava Lamer",
-      "vehicle_registration_number": null,
-      "registration_numbers": [
-        {
-          "number": "1676",
-          "generation": null,
-          "current": false
-        }
-      ],
-      "registration_plates": [
-        "3SV 3233"
-      ],
-      "manufacturer": "MAN",
-      "model": "MAN NG 363 Lion’s City G",
-      "year_manufactured": 2016,
-      "operator_period": "Autodoprava Lamer (pronajat: 5/2025 - 3/2026)",
-      "state_code": "prod",
-      "state": "prodán/předán jinému dopravci",
-      "current_operator": false,
-      "wheelchair_accessible": null,
-      "air_conditioned": null,
-      "usb_chargers": null,
-      "equipment": [],
-      "source_url": "https://seznam-autobusu.cz/vuz/62974",
-      "retrieved_from": "https://sa-proxy.kojban.cz/vuz/62974",
-      "detail_verified": false,
-      "traction": "bus"
-    },
-    {
-      "sa_id": 148617,
-      "operator": "Autodoprava Lamer",
-      "vehicle_registration_number": null,
-      "registration_numbers": [],
-      "registration_plates": [
-        "7SF 3266"
-      ],
-      "manufacturer": "Iveco",
-      "model": "Iveco Evadys 12M",
-      "year_manufactured": 2026,
-      "operator_period": "Autodoprava Lamer (od 4/2026)",
-      "state_code": "zar",
-      "state": "provozní",
-      "current_operator": true,
-      "wheelchair_accessible": null,
-      "air_conditioned": true,
-      "usb_chargers": null,
-      "equipment": [
-        "klimatizace"
-      ],
-      "source_url": "https://seznam-autobusu.cz/vuz/148617",
-      "retrieved_from": "https://sa-proxy.kojban.cz/vuz/148617",
-      "detail_verified": true,
-      "traction": "bus",
-      "equipment_text": "klimatizace",
-      "vin": "VNE6236R60M071962",
-      "technical_description": "Iveco Evadys 12M motor: Iveco Cursor 9, 294 kW (EURO VI) převodovka: automatická 7°, VOITH Diwa NXT rozložení dveří: 1-0-1",
-      "current_registration_plate": "7SF 3266",
-      "state_global": "provozní",
-      "source_updated": "2. 6. 2026."
+      "livery": "PID",
+      "advertisement": null
     }
   ]
 }
