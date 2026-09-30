@@ -17,3 +17,8 @@ První MVP: UI, mapa, filtry a GTFS oběhy jsou připravené. Realtime začne fu
 
 ## Evidence nátěrů vozů
 Pole `livery` obsahuje celý popis aktuálního nátěru podle Seznamu autobusů, včetně barev a provedení. Popis nezkracujeme na obecné označení jako `PID`: například `schéma PID, červeno-bílo-modrá` a `schéma PID, šedá s červenými svislými pruhy` jsou různé varianty. Z přehledu nátěrů vybíráme aktuálně platný záznam, nikoli historický. Mapa zobrazuje celý uložený popis. Reklama se eviduje samostatně v `advertisement`; nezjištěný nátěr má hodnotu `null`.
+
+## Vozy DPP – Klíčov
+Soubor `data/vehicles/dpp-klicov.json` je snímek evidence ze Seznamu autobusů, ověřený přes [sa-proxy.kojban.cz](https://sa-proxy.kojban.cz/typy/dopravni-podnik-hl-m-prahy/provozovna-garaz-klicov) dne 30. 9. 2026. Obsahuje 293 vozů s jednoznačným současným evidenčním číslem a aktuální provozovnou Klíčov: 273 autobusů, 4 elektrobusy (trakce `bus`) a 16 trolejbusů (trakce `trolleybus`). Vynechává dva vozy aktuálně vedené v Kačerově a Řepích a dalších sedm vozů bez jednoznačného současného evidenčního čísla: šest historických či muzejních vozů se dvěma současně zvýrazněnými čísly a jeden autobus bez současného evidenčního čísla.
+
+Záznamy se párují výhradně podle dopravce, trakce a evidenčního čísla. `data/operators.json` převádí realtime název `DP PRAHA` a alias `DPP` na zdrojový název `Dopravní podnik hl. m. Prahy`. Nezjištěná výbava má hodnotu `null`; klimatizace se potvrzuje pouze při výslovně uvedené celovozové klimatizaci pro cestující. Bezbariérovost se neodvozuje z názvu modelu. Současně platné popisy nátěru se spojují pomocí ` & `; výslovná celovozová reklama nebo reklamní polep se ukládá také do `advertisement`. Historické nátěry se nepřebírají.
