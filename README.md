@@ -25,3 +25,6 @@ Záznamy se párují výhradně podle dopravce, trakce a evidenčního čísla. 
 
 ## Vozy DPP – Řepy
 Soubor `data/vehicles/dpp-repy.json` je snímek evidence ze Seznamu autobusů, ověřený přes [sa-proxy.kojban.cz](https://sa-proxy.kojban.cz/typy/dopravni-podnik-hl-m-prahy/provozovna-garaz-repy) dne 30. 9. 2026. Obsahuje 306 vozů s jednoznačným současným evidenčním číslem a aktuální provozovnou Řepy: 268 autobusů a 38 trolejbusů. Jeden autobus ze seznamu Řep je vynechán, protože je aktuálně vedený v Klíčově. Pro výbavu, nátěry, reklamy a párování platí stejná pravidla jako u Klíčova; katalogy se nepřekrývají podle ID ani podle kombinace dopravce, trakce a evidenčního čísla.
+
+## Vozy DPP – Kačerov (autobusy)
+Soubor `data/vehicles/dpp-kacerov.json` je snímek autobusové evidence ze Seznamu autobusů, ověřený přes [sa-proxy.kojban.cz](https://sa-proxy.kojban.cz/typy/dopravni-podnik-hl-m-prahy/provozovna-garaz-kacerov) dne 30. 9. 2026. Obsahuje 278 autobusů s jednoznačným současným evidenčním číslem a aktuální provozovnou Kačerov; jiné trakce nejsou součástí tohoto souboru. Detaily všech vozů jsou ověřené. Pro výbavu, celé aktuální nátěry, samostatnou reklamu a párování platí stejná pravidla jako u ostatních garáží. Katalog se nepřekrývá s Klíčovem ani Řepy podle ID nebo kombinace dopravce, trakce a evidenčního čísla.
