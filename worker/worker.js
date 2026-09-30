@@ -22,7 +22,18 @@ export default {
     if (request.method !== "GET") return new Response("Method not allowed", { status: 405, headers: corsHeaders });
 
     const incoming = new URL(request.url);
-    if (incoming.pathname === "/gtfsrt-assignments") {\n      try {\n        const response = await fetch("https://api.golemio.cz/v2/vehiclepositions/gtfsrt/pid_feed.pb", {headers: {"X-Access-Token": env.GOLEMIO_API_KEY, "Accept": "application/x-protobuf"}});\n        if (!response.ok) return new Response(JSON.stringify({error:"Golemio GTFS-RT HTTP "+response.status}), {status:response.status,headers:{...corsHeaders,"Content-Type":"application/json; charset=utf-8"}});\n        const entities=parseFeed(new Uint8Array(await response.arrayBuffer()));\n        return new Response(JSON.stringify(assignmentSummary(entities)), {headers:{...corsHeaders,"Content-Type":"application/json; charset=utf-8","Cache-Control":"public, max-age=10"}});\n      } catch (error) {\n        return new Response(JSON.stringify({error:"GTFS-RT assignments error",message:error instanceof Error?error.message:String(error)}), {status:500,headers:{...corsHeaders,"Content-Type":"application/json; charset=utf-8"}});\n      }\n    }\n\n    if (incoming.pathname === "/gtfsrt-debug") {
+    if (incoming.pathname === "/gtfsrt-assignments") {
+      try {
+        const response = await fetch("https://api.golemio.cz/v2/vehiclepositions/gtfsrt/pid_feed.pb", {headers: {"X-Access-Token": env.GOLEMIO_API_KEY, "Accept": "application/x-protobuf"}});
+        if (!response.ok) return new Response(JSON.stringify({error:"Golemio GTFS-RT HTTP "+response.status}), {status:response.status,headers:{...corsHeaders,"Content-Type":"application/json; charset=utf-8"}});
+        const entities=parseFeed(new Uint8Array(await response.arrayBuffer()));
+        return new Response(JSON.stringify(assignmentSummary(entities)), {headers:{...corsHeaders,"Content-Type":"application/json; charset=utf-8","Cache-Control":"public, max-age=10"}});
+      } catch (error) {
+        return new Response(JSON.stringify({error:"GTFS-RT assignments error",message:error instanceof Error?error.message:String(error)}), {status:500,headers:{...corsHeaders,"Content-Type":"application/json; charset=utf-8"}});
+      }
+    }
+
+    if (incoming.pathname === "/gtfsrt-debug") {
       try {
         const response = await fetch("https://api.golemio.cz/v2/vehiclepositions/gtfsrt/pid_feed.pb", {
           headers: {"X-Access-Token": env.GOLEMIO_API_KEY, "Accept": "application/x-protobuf"},
