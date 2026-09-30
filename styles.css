@@ -67,3 +67,20 @@
  .filter-sheet.open,.vehicle-sheet.open{transform:translateX(0)}
  .map-actions{left:18px;bottom:18px}
 }
+
+/* Vehicle card information hierarchy */
+.vc-head1{display:grid;grid-template-columns:auto auto minmax(0,1fr);align-items:center;gap:6px;margin-top:3px}
+.vc-line-chip{background:var(--a);color:#fff;border-radius:5px;padding:5px 8px;font-size:15px;font-weight:850;line-height:1}
+.vc-order-inline{font-size:11px;color:#666;font-weight:700}
+.vc-direction{font-size:13px;font-weight:650;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.vc-head2{display:grid;grid-template-columns:auto auto minmax(0,1fr);align-items:center;gap:5px;margin-top:7px;min-height:21px}
+.vc-ev{font-size:12px;font-weight:800}.vc-ev .vc-ev-link{font-size:12px}.vc-icons{display:flex;gap:3px}.vc-icons .vc-feature{padding:1px 4px;min-height:17px;font-size:9px}
+.vc-type{text-align:right;font-size:11px;font-weight:700;color:#555;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.vc-head3{display:flex;justify-content:space-between;gap:10px;color:#777;font-size:10px;border-bottom:1px solid #eee;padding:3px 0 6px}
+.vc-head3 span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.vc-next-new{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:7px 0 3px;font-size:12px}
+.vc-next-name{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.vc-next-times{display:flex;gap:5px;white-space:nowrap;font-variant-numeric:tabular-nums;color:#666}.vc-next-times .late{color:#c92d25;font-weight:800}
+.vehicle-card.level-2{height:50dvh!important;max-height:50dvh!important}
+.vehicle-card.level-2 .vc-all-stops{overflow-y:auto;touch-action:pan-y}
+.vehicle-card.level-2 .vc-card-head,.vehicle-card.level-2 .vc-head1,.vehicle-card.level-2 .vc-head2,.vehicle-card.level-2 .vc-head3,.vehicle-card.level-2 .vc-next-new,.vehicle-card.level-2 .vc-actions{flex-shrink:0}
+.vc-close{touch-action:manipulation}
