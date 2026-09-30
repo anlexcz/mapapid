@@ -1,6 +1,7 @@
 {
   "schema_version": 1,
   "files": [
-    "lamer.json"
+    "lamer.json",
+    "dpp-klicov.json"
   ]
 }
