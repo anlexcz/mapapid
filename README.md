@@ -10,21 +10,26 @@ Mobile-first vlastní mapa vozidel Pražské integrované dopravy.
 
 ## Data
 Statický GTFS: PID_GTFS.zip. GitHub Action jej denně stáhne a vytvoří `data/gtfs-index.json`.
-Realtime: Golemio Vehicle Positions přes bezpečný server-side proxy. API token nesmí být ve frontendu ani v tomto repozitáři.
+Realtime: Golemio JSON Vehicle Positions a společný GTFS-RT `pid_feed.pb` přes bezpečný server-side Cloudflare Worker proxy. API token nesmí být ve frontendu ani v tomto repozitáři. JSON Vehicle Positions je primární bohatý zdroj; GTFS-RT VehiclePosition doplňuje skutečné poslední polohy vozidel, která už JSON snapshot nevrací, typicky při čekání na konečné.
 
 ## Stav
 Aplikace běží na GitHub Pages a používá realtime Golemio přes Cloudflare Worker proxy. Statický PID GTFS se předzpracovává do indexu a route chunků. UI je mobile-first, ale podporuje i desktop.
 
 ## Základní pravidla realtime a GTFS
-- Realtime Golemio je autorita pro aktuální polohu, linku, trip a stav vozidla. Vozidla se mezi reportovanými souřadnicemi neanimují ani neinterpolují.
+- Poloha vozidla smí pocházet pouze ze skutečně reportované souřadnice. Vozidla se mezi reporty neanimují ani neinterpolují.
+- Primární realtime zdroj je Golemio JSON `/v2/vehiclepositions`; Worker u nefiltrovaného dotazu nastavuje `limit=10000`, protože výchozí limit Golemio je 100 záznamů.
+- Společný GTFS-RT `pid_feed.pb` obsahuje Vehicle Positions i Trip Updates. `vehicle.id` je společný klíč fyzického vozidla mezi oběma částmi feedu; u DPP má např. tvar `service-0-8488`.
+- GTFS-RT VehiclePosition je záložní zdroj polohy. Pokud fyzické vozidlo chybí v aktuálním JSON snapshotu, ale `pid_feed.pb` stále obsahuje jeho VehiclePosition, mapa použije tuto poslední skutečně reportovanou GPS souřadnici a její původní timestamp. Tím lze zobrazit i vůz čekající na konečné dlouho po poslední zprávě.
+- Ověřený případ 1. 10. 2026: vůz DPP 8488 na lince 95 ve Vozovně Kobylisy nebyl kolem 00:55 v JSON Vehicle Positions, ale `pid_feed.pb` jej stále obsahoval na tripu `95_2832_260829` se souřadnicí 50.1326713562, 14.4537000656 a timestampem poslední zprávy 00:30:55; veřejná PID mapa zobrazovala stejný vůz na konečné s plánovaným odjezdem v 01:01.
+- Trip Updates slouží pro vazbu vozidla na aktuální a následující tripy; samy nikdy nevytvářejí polohu. Jeden `vehicle.id` může mít současně více Trip Updates, což umožňuje znát následující spoj stejného fyzického vozu.
+- Při sloučení zdrojů nesmí vzniknout dvě kopie stejného fyzického vozidla. JSON má přednost; GTFS-RT fallback se přidává pouze tehdy, pokud odpovídající fyzický vůz v JSON snapshotu není.
 - Realtime `gtfs.trip_id` se páruje přímo na aktuální statický PID GTFS trip. Fuzzy matching není běžná cesta.
 - `sequence_id` z realtime se v UI používá jako provozní pořadí. U vlaků má tento údaj význam čísla vlaku a v seznamech se zobrazuje na místě, kde ostatní trakce používají evidenční číslo.
 - U metra bez evidenčního čísla se jako identita zobrazuje linka A/B/C.
 - PID GTFS `stop_times` zachovává zdrojové pořadí tripů. Build ukládá `source_order`, `trip_operation_type`, globální `sequence` a pozici tripu. To je základ pro budoucí rekonstrukci skutečného oběhu; `block_id` se pro PID nepovažuje za dostatečný.
 - `trip_operation_type`: 1 běžný spoj, 7 výjezd, 8 zátah, 9 přejezd v rámci linky, 10 přejezd na jinou linku. Hodnoty slouží jako pomocná informace/boundary check.
-- Vozidlo jedoucí k poslední zastávce ještě není „na konečné“. Stav konečné lze vyhlásit až po skutečném dosažení poslední zastávky (`last_stop`), nikoli pouze proto, že `next_stop` je poslední zastávka.
-- Stará poloha: do 5 minut normální marker; 5–10 minut utlumený/stale marker a informace o poslední známé poloze; po 10 minutách skrýt.\n- Pro pobyt na konečné se používá vazba z GTFS-RT `pid_feed.pb`: `vehicle.id` spojuje Vehicle Position s Trip Updates stejného fyzického vozidla. Pokud vozidlo po skutečném dosažení poslední zastávky zmizí z JSON Vehicle Positions, ale GTFS-RT mu stále přiřazuje další trip, mapa ho může až 30 minut ponechat na poslední skutečně nahlášené GPS souřadnici. Trip Update nikdy nevytváří ani neinterpoluje polohu. Bez potvrzeného pokračování platí běžný desetiminutový limit.
-- Pokud je spolehlivě znám konec výkonu/zátah, cílem je vozidlo po dokončení odstranit; nesmí se ale odstraňovat aktivní vůz jen na základě domněnky.
+- Běžný JSON marker se podle stáří zobrazuje do 5 minut normálně, 5–10 minut jako stale a po 10 minutách se skrývá. Toto pravidlo se nevztahuje na GTFS-RT fallback na konečné: jeho smyslem je právě zachovat starší skutečně reportovanou polohu, dokud ji společný feed stále publikuje.
+- Pokud je spolehlivě znám konec výkonu/zátah a společný feed už vozidlo nepublikuje, má být vozidlo odstraněno; aktivní vůz se nesmí odstraňovat jen na základě domněnky.
 
 ## Databáze vozidel
 Vlastní katalog vozidel je oddělený od realtime. Frontend načítá manifest `data/vehicles/index.json` a jednotlivé soubory v `data/vehicles/`; není natvrdo vázaný na jednoho dopravce. Základní párovací klíč je přesně **dopravce + trakce + aktuální evidenční číslo**. Fallback, který by dovolil spárovat stejnou trakci a ev. číslo jiného dopravce, se nepoužívá.
