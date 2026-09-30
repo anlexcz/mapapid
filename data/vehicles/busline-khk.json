@@ -2,6 +2,20 @@
   "operator": "BusLine KHK",
   "vehicles": [
     {
+      "sa_id": 45251,
+      "operator": "BusLine KHK",
+      "ev": "1403",
+      "manufacturer": "SOR",
+      "model": "SOR CN 10,5",
+      "depot": "Hradec Králové",
+      "wheelchair_accessible": null,
+      "air_conditioned": true,
+      "usb_chargers": null,
+      "traction": "bus",
+      "livery": "žlutozelená",
+      "advertisement": null
+    },
+    {
       "sa_id": 97431,
       "operator": "BusLine KHK",
       "ev": "7001",
@@ -167,6 +181,20 @@
       "usb_chargers": true,
       "traction": "bus",
       "livery": "bílá",
+      "advertisement": null
+    },
+    {
+      "sa_id": 99953,
+      "operator": "BusLine KHK",
+      "ev": "33275",
+      "manufacturer": "SOR",
+      "model": "SOR CN 12",
+      "depot": "Jičín",
+      "wheelchair_accessible": null,
+      "air_conditioned": true,
+      "usb_chargers": true,
+      "traction": "bus",
+      "livery": "schéma PID, červeno-bílo-modrá",
       "advertisement": null
     }
   ]
