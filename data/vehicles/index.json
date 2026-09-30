@@ -14,6 +14,9 @@
     "csad-polkost.json",
     "ad-stredni-cechy.json",
     "akv-bus.json",
-    "arriva-autobusy.json"
+    "arriva-autobusy.json",
+    "autobusova-doprava-kohout.json",
+    "busline-jizni-cechy.json",
+    "busline-khk.json"
   ]
 }
