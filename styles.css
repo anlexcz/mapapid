@@ -84,3 +84,18 @@
 .vehicle-card.level-2 .vc-all-stops{overflow-y:auto;touch-action:pan-y}
 .vehicle-card.level-2 .vc-card-head,.vehicle-card.level-2 .vc-head1,.vehicle-card.level-2 .vc-head2,.vehicle-card.level-2 .vc-head3,.vehicle-card.level-2 .vc-next-new,.vehicle-card.level-2 .vc-actions{flex-shrink:0}
 .vc-close{touch-action:manipulation}
+
+/* Smooth staged card + compact icon actions */
+.vehicle-card{overflow:hidden;transition:height .18s cubic-bezier(.2,.75,.25,1),max-height .18s cubic-bezier(.2,.75,.25,1),transform .15s ease,opacity .12s ease}
+.vehicle-card.level-changing{will-change:height}
+.vc-card-head,.vc-head1,.vc-head2,.vc-head3,.vc-next-new{cursor:pointer}
+.vc-actions{align-items:center;gap:5px}
+.vc-actions .vc-action{display:inline-flex;align-items:center;justify-content:center;gap:4px;min-width:0;height:34px;padding:4px 8px;border-radius:7px;white-space:nowrap}
+.vc-action-icon{font-size:16px;line-height:1;font-weight:500}
+.vc-actions .vc-action span:last-child{font-size:10px}
+.vc-age{white-space:nowrap;margin-left:auto;font-size:10px}
+@media(max-width:420px){
+ .vc-actions .vc-action{padding:4px 7px}
+ .vc-actions .vc-action span:last-child{display:none}
+ .vc-actions .vc-action-icon{font-size:18px}
+}
