@@ -23,7 +23,7 @@ with zipfile.ZipFile(io.BytesIO(blob)) as z:
             if tid not in seen_order: source_order.append(tid); seen_order.add(tid)
             a=r.get("arrival_time","");d=r.get("departure_time","");tm=d or a
             bounds.setdefault(tid,[tm,tm])[1]=tm
-            details[tid].append({"id":r["stop_id"],"n":stop_names.get(r["stop_id"],""),"a":a,"d":d,"op":r.get("trip_operation_type","")})
+            details[tid].append({"id":r["stop_id"],"n":stop_names.get(r["stop_id"],""),"a":a,"d":d,"s":int(r["stop_sequence"]),"op":r.get("trip_operation_type","")})
     wanted_shapes={t.get("shape_id","") for t in trips if t.get("shape_id")}
     shapes={sid:[] for sid in wanted_shapes}
     with z.open("shapes.txt") as f:
