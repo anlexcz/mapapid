@@ -5,15 +5,57 @@ Mobile-first vlastní mapa vozidel Pražské integrované dopravy.
 - realtime vozidla na mapě
 - kombinovatelné filtry: dopravce, typ vozidla, linka, pořadí, evidenční číslo
 - napojení realtime tripu na statický GTFS
-- rekonstrukce plánovaného oběhu přes GTFS `block_id`
-- později odhad budoucí polohy vozu
+- rekonstrukce plánovaného oběhu z pořadí tripů v PID GTFS; `block_id` se pro tento účel nepovažuje za spolehlivý
+- zobrazovat pouze skutečně reportované realtime polohy; polohu vozidla mezi reporty neinterpolovat
 
 ## Data
 Statický GTFS: PID_GTFS.zip. GitHub Action jej denně stáhne a vytvoří `data/gtfs-index.json`.
 Realtime: Golemio Vehicle Positions přes bezpečný server-side proxy. API token nesmí být ve frontendu ani v tomto repozitáři.
 
 ## Stav
-První MVP: UI, mapa, filtry a GTFS oběhy jsou připravené. Realtime začne fungovat po nastavení proxy URL v `config.js`.
+Aplikace běží na GitHub Pages a používá realtime Golemio přes Cloudflare Worker proxy. Statický PID GTFS se předzpracovává do indexu a route chunků. UI je mobile-first, ale podporuje i desktop.
+
+## Základní pravidla realtime a GTFS
+- Realtime Golemio je autorita pro aktuální polohu, linku, trip a stav vozidla. Vozidla se mezi reportovanými souřadnicemi neanimují ani neinterpolují.
+- Realtime `gtfs.trip_id` se páruje přímo na aktuální statický PID GTFS trip. Fuzzy matching není běžná cesta.
+- `sequence_id` z realtime se v UI používá jako provozní pořadí. U vlaků má tento údaj význam čísla vlaku a v seznamech se zobrazuje na místě, kde ostatní trakce používají evidenční číslo.
+- U metra bez evidenčního čísla se jako identita zobrazuje linka A/B/C.
+- PID GTFS `stop_times` zachovává zdrojové pořadí tripů. Build ukládá `source_order`, `trip_operation_type`, globální `sequence` a pozici tripu. To je základ pro budoucí rekonstrukci skutečného oběhu; `block_id` se pro PID nepovažuje za dostatečný.
+- `trip_operation_type`: 1 běžný spoj, 7 výjezd, 8 zátah, 9 přejezd v rámci linky, 10 přejezd na jinou linku. Hodnoty slouží jako pomocná informace/boundary check.
+- Vozidlo jedoucí k poslední zastávce ještě není „na konečné“. Stav konečné lze vyhlásit až po skutečném dosažení poslední zastávky (`last_stop`), nikoli pouze proto, že `next_stop` je poslední zastávka.
+- Stará poloha: do 5 minut normální marker; 5–10 minut utlumený/stale marker a informace o poslední známé poloze; po 10 minutách skrýt. Robustní uchování vozu, pokud úplně zmizí z realtime feedu, je samostatná věc k dořešení.
+- Pokud je spolehlivě znám konec výkonu/zátah, cílem je vozidlo po dokončení odstranit; nesmí se ale odstraňovat aktivní vůz jen na základě domněnky.
+
+## Databáze vozidel
+Vlastní katalog vozidel je oddělený od realtime. Frontend načítá manifest `data/vehicles/index.json` a jednotlivé soubory v `data/vehicles/`; není natvrdo vázaný na jednoho dopravce. Základní párovací klíč je přesně **dopravce + trakce + aktuální evidenční číslo**. Fallback, který by dovolil spárovat stejnou trakci a ev. číslo jiného dopravce, se nepoužívá.
+
+U vozu ukládáme jen data užitečná pro mapu: `sa_id`, zdrojového dopravce, aktuální ev. číslo, trakci, výrobce, přesný model, případně odlišného `current_operator`, provozovnu, bezbariérovost, klimatizaci, USB, aktuální nátěr a aktuální reklamu. Historická ev. čísla a jiná nepotřebná data se do katalogu nehromadí.
+
+Dopravce u vozidla zůstává ve tvaru ze Seznamu autobusů. Normalizace názvů a zkratek je centrálně v `data/operators.json`, aby se např. zdrojový název mohl v UI zobrazit jako DPP. Provozovna je samostatný údaj a zapisuje se pouze názvem místa, např. `Klíčov`, `Řepy`, `Kobylisy`, bez slov „garáž“ nebo „vozovna“.
+
+`sa_id` je stabilní vazba na profil vozidla a zároveň se používá pro odkaz z evidenčního čísla na `seznam-autobusu.cz/vuz/<sa_id>` v novém okně. Seznam autobusů / sa-proxy slouží jako zdroj pro periodicky budovaný katalog, nikoli jako live dependency při každém kliknutí v mapě.
+
+Výbava se neodhaduje bez podkladu: neznámá hodnota je `null`. Bezbariérovost se automaticky neodvozuje jen z názvu modelu. Klimatizace znamená výslovně potvrzenou klimatizaci prostoru pro cestující.
+
+## Pravidla UI mapy
+- Výchozí marker zobrazuje linku; v nastavení lze jako hlavní údaj zvolit evidenční číslo. Volba ovlivňuje i pořadí údajů v seznamu vozidel.
+- Seznam „Vozidla“ a „Filtry“ jsou dvě samostatné akce/panely. Vozidla bez aktivního filtru zobrazují jen vozy v aktuálním výřezu a až od definované úrovně zoomu, aby se nevykreslovaly zbytečně tisíce položek.
+- Seznam vozidel je kompaktní jednořádkový: linka, /pořadí, ev. číslo, směr/konečná a dopravce. Neznámé údaje se nepíšou.
+- Kliknutí na řádek vybere vozidlo a vystředí ho do **viditelné části mapy**, tedy s ohledem na otevřený spodní panel.
+- Kliknutí mimo vybraný vůz do mapy výběr ruší. Karta má vlastní křížek.
+- Funkce „Skrýt ostatní“ ponechá jen vybraný vůz; po vypnutí/zavření se ostatní vrátí.
+- Karta vozidla má tři úrovně: kompaktní → několik okolních zastávek → 50 % výšky obrazovky s plným scrollovatelným JŘ. Swipe nahoru/dolů přechází po úrovních. Tap na hlavičku kompaktní karty otevře střední stav.
+- Střední stav nemá mít vlastní scroll; několik zastávek se musí vejít. Scroll je určen až pro plný JŘ.
+- Přechody mezi úrovněmi jsou krátké a jemné. Stav se řídí třídami `level-0/1/2`; nepoužívat křehkou ruční animaci měřením a přepisováním výšky přes timeouty.
+- Hlavička karty: červený chip linky, menší `/pořadí` zarovnané k dolní hraně chipu, výraznější směr/konečná a zpoždění vpravo. Druhý řádek: větší ev. číslo (odkaz na SA), ikony výbavy a vpravo výrazný přesný typ. Třetí řádek: vlevo aktuální nátěr/reklama, vpravo dopravce.
+- Řádek následující zastávky zobrazuje název, čas dle JŘ a při rozdílu i odhadovaný čas podle aktuálního zpoždění; interní sekvenční číslo zastávky se uživateli nezobrazuje.
+- Spodní akce jsou kompaktní: JŘ, sledování a skrýt/zobrazit ostatní. Oběh není v hlavní spodní liště.
+- Stáří polohy se píše stručně, např. `před 37 s` nebo `před 2 min`.
+- Pro UI se používá jednotná sada Material Icons namísto směsi emoji a různých Unicode symbolů.
+- Křížek, swipy a tapy nesmějí blokovat refresh timer ani hlavní JS smyčku. Při dalších změnách karty je stabilita těchto handlerů priorita.
+
+## Vizuální směr
+Technický, kompaktní a informačně hustý vzhled; žádné zbytečně velké karty, whitespace nebo „AI dashboard“ estetika. Ostré/lehce zaoblené prvky, červený akcent `#FF3636`. Mobil je primární, desktop má využít prostor bez zakrytí mapy.
 
 ## Evidence nátěrů vozů
 Pole `livery` obsahuje celý popis aktuálního nátěru podle Seznamu autobusů, včetně barev a provedení. Popis nezkracujeme na obecné označení jako `PID`: například `schéma PID, červeno-bílo-modrá` a `schéma PID, šedá s červenými svislými pruhy` jsou různé varianty. Z přehledu nátěrů vybíráme aktuálně platný záznam, nikoli historický. Mapa zobrazuje celý uložený popis. Reklama se eviduje samostatně v `advertisement`; nezjištěný nátěr má hodnotu `null`.
