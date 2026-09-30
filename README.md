@@ -79,3 +79,20 @@ Soubor `data/vehicles/dpp-vrsovice.json` je snímek evidence ze Seznamu autobus�
 
 ## Pokrytí garáží DPP
 Katalog pokrývá všech pět současných garáží uvedených ve zdroji: Klíčov (294 vozů), Řepy (307), Kačerov (278), Hostivař (201) a Vršovice (150), celkem 1 230 vozů DPP. Kontrola všech pěti přehledů potvrzuje pokrytí každého vozu s jednoznačným současným evidenčním číslem. Šestnáct dalších vozů s více současně zvýrazněnými čísly nebo bez evidenčního čísla se do párování nezahrnuje. Při závěrečné kontrole byly podle detailů doplněny také 2055 do Řep a 5093 do Klíčova. Ve všech souborech platí stejná pravidla pro celé aktuální nátěry, samostatnou reklamu a neznámou výbavu (`null`). Katalogy nemají duplicitní ID ani klíče dopravce, trakce a evidenčního čísla. Jde o statický snímek evidence, nikoli automatickou synchronizaci.
+
+## Vozy STENBUS
+Soubor `data/vehicles/stenbus.json` obsahuje 35 současných autobusů s jednoznačným evidenčním číslem a provozovnou Bystrá (linky PID). Zdroj: [STENBUS v Seznamu autobusů přes sa-proxy](https://sa-proxy.kojban.cz/seznam?iddopravce=77&prov=1&trakce=autobus&vcetneSluzebnich=1), detaily všech zahrnutých vozů ověřeny 30. 9. 2026. Ze 51 záznamů přehledu není zahrnuto 16 vozů vedených pro ostatní výkony, historické výkony nebo bez současného čísla. Provozovna se ukládá jako `Bystrá`.
+
+## Vozy ABOUT ME
+Soubor `data/vehicles/about-me.json` obsahuje 41 autobusů s aktuálním číslem řady 19xx. Zdroj: [ABOUT ME v Seznamu autobusů přes sa-proxy](https://sa-proxy.kojban.cz/seznam?iddopravce=209&prov=1&trakce=autobus&vcetneSluzebnich=1), detaily všech zahrnutých vozů ověřeny 30. 9. 2026. Z přehledu 45 vozů jsou vynechány čtyři vozy pro výkony mimo PID: jeden bez současného čísla a tři s čísly 18154–18156. Zdroj u zahrnutých vozů neuvádí provozovnu, proto je `depot: null`. Výslovné reklamní polepy zádě (`celolep zádi`) jsou spolu s celovozovými reklamami zaznamenány také v `advertisement`.
+
+## Vozy MARTIN UHER bus
+Soubor `data/vehicles/martin-uher-bus.json` obsahuje 21 vozů současného provozovatele MARTIN UHER bus: 11 běžných autobusů pronajatých od společnosti MARTIN UHER a 10 vodíkových autobusů Solaris Urbino 12 IV hydrogen s přidělenými čísly 1150–1159. Zdroj: [MARTIN UHER bus v Seznamu autobusů přes sa-proxy](https://sa-proxy.kojban.cz/dopravce/martin-uher-bus), detaily všech vozů ověřeny 30. 9. 2026.
+
+**Vodíkové vozy jsou ve zdroji stále vedené se stavem „dosud nezařazen“ (`nzr`).** Jsou zahrnuty kvůli jednoznačné současné identitě a přiděleným číslům; jejich přítomnost v katalogu nepotvrzuje provoz. Běžný filtr provozních vozů je vynechává, proto byl zkontrolován i nefiltrovaný přehled elektrobusů. Trakce všech 21 vozů je `bus`; provozovna není uvedena a zůstává `null`.
+
+## Vozy MARTIN UHER
+Soubor `data/vehicles/martin-uher.json` obsahuje 37 současných autobusů PID s jednoznačným evidenčním číslem a aktuálním provozovatelem MARTIN UHER. Zdroj: [MARTIN UHER v Seznamu autobusů přes sa-proxy](https://sa-proxy.kojban.cz/seznam?iddopravce=64&prov=1&trakce=autobus&vcetneSluzebnich=1), detaily všech zahrnutých vozů ověřeny 30. 9. 2026. Jedenáct aktuálně pronajatých autobusů je evidováno pouze v katalogu MARTIN UHER bus podle současného provozovatele. Historické, služební a nečíslované vozy se do párování nezařazují. Provozovna není ve zdroji uvedena a zůstává `null`. Obě společnosti mají samostatné záznamy a aliasy v `data/operators.json`.
+
+## Pokrytí dalších dopravců
+Tyto čtyři katalogy přidávají 134 vozů s ověřeným detailem; manifest nyní načítá 10 souborů a celkem 1 380 vozů včetně DPP a Lameru. Neznámá výbava zůstává `null`, klimatizace se potvrzuje pouze pro prostor cestujících a nátěry se přebírají celé. Kontrola načítání a párování potvrzuje jedinečnost ID i klíče dopravce + trakce + evidenční číslo v celém manifestu. Aliasům dopravců odpovídají názvy ze zdroje a plné názvy společností; živé ověření názvů z realtime feedu nebylo v tomto kroku dostupné. Jde o snímek zdrojové evidence, nikoli úplné pokrytí všech dopravců PID nebo automatickou synchronizaci.
