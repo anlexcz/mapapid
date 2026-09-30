@@ -6,3 +6,13 @@
 .vc-feature{display:inline-flex;align-items:center;min-height:19px;padding:2px 5px;border:1px solid #d8d8d5;border-radius:4px;background:#f7f7f5;font-size:10px;font-weight:800}
 .vc-paint{color:#555;margin-left:2px}
 .vc-dot{color:#aaa}
+
+/* Desktop/filter panel */
+.sheet{display:flex;flex-direction:column;overflow:hidden}
+.vehicle-list{overflow-y:auto;min-height:0;overscroll-behavior:contain}
+.floating{width:52px;height:52px;border-radius:50%;padding:0;background:var(--a);display:flex;align-items:center;justify-content:center;gap:0;font-weight:800}
+.floating .filter-icon{font-size:20px;background:none;padding:0}.floating .filter-label,.floating #count{display:none}
+.sheet-head button{cursor:pointer;line-height:1;padding:2px 6px}
+.vehicle{width:100%;min-height:31px;padding:4px 2px;border-top:1px solid #eee;display:grid;grid-template-columns:auto auto auto minmax(0,1fr) minmax(70px,auto);gap:4px;align-items:center;text-align:left;cursor:pointer;background:#fff}
+.vehicle:hover{background:#f5f5f3}.vehicle .badge{min-width:25px;padding:3px 5px;border-radius:4px;font-size:10px}.row-order{font-size:11px;font-weight:700;color:#555}.row-vehicle{font-size:11px;font-weight:800}.row-dest{font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.row-operator{text-align:right;color:#777;font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media(min-width:800px){header{left:12px;right:auto;width:390px}.sheet{left:auto;right:12px;bottom:76px;top:70px;width:min(520px,calc(100vw - 24px));max-height:none;border:1px solid #ddd;border-radius:8px;transform:translateX(calc(100% + 24px));padding:7px 9px;box-shadow:0 4px 18px #0002}.sheet.open{transform:none}.floating{display:flex;right:18px;bottom:18px}.vehicle-card{left:auto;right:12px;width:390px}.grab{display:none}#search{flex:0 0 auto}.chips,.filter-more,.status,.sheet-head{flex:0 0 auto}.vehicle-list{flex:1 1 auto}}
