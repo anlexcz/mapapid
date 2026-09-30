@@ -52,5 +52,15 @@
       "Martin Uher spol. s r.o.",
       "Martin UHER, spol. s r. o."
     ]
+  },
+  "ČSAD POLKOST": {
+    "source_name": "ČSAD POLKOST",
+    "name": "ČSAD POLKOST, spol. s r.o.",
+    "short_name": "ČSAD POLKOST",
+    "aliases": [
+      "ČSAD POLKOST, spol. s r.o.",
+      "ČSAD POLKOST, spol. s r. o.",
+      "ČSAD POLKOST spol. s r.o."
+    ]
   }
 }
