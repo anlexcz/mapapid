@@ -16,3 +16,17 @@
 .vehicle{width:100%;min-height:31px;padding:4px 2px;border-top:1px solid #eee;display:grid;grid-template-columns:auto auto auto minmax(0,1fr) minmax(70px,auto);gap:4px;align-items:center;text-align:left;cursor:pointer;background:#fff}
 .vehicle:hover{background:#f5f5f3}.vehicle .badge{min-width:25px;padding:3px 5px;border-radius:4px;font-size:10px}.row-order{font-size:11px;font-weight:700;color:#555}.row-vehicle{font-size:11px;font-weight:800}.row-dest{font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.row-operator{text-align:right;color:#777;font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 @media(min-width:800px){header{left:12px;right:auto;width:390px}.sheet{left:auto;right:12px;bottom:76px;top:70px;width:min(520px,calc(100vw - 24px));max-height:none;border:1px solid #ddd;border-radius:8px;transform:translateX(calc(100% + 24px));padding:7px 9px;box-shadow:0 4px 18px #0002}.sheet.open{transform:none}.floating{display:flex;right:18px;bottom:18px}.vehicle-card{left:auto;right:12px;width:390px}.grab{display:none}#search{flex:0 0 auto}.chips,.filter-more,.status,.sheet-head{flex:0 0 auto}.vehicle-list{flex:1 1 auto}}
+
+/* Desktop panel refinement */
+.floating,.sheet,.vehicle,.chips button,.filter-more,.settings-panel{transition:transform .14s ease,opacity .12s ease,background-color .12s ease,border-color .12s ease}
+.floating.hidden{opacity:0;transform:scale(.82);pointer-events:none}
+.vehicle{grid-template-columns:42px 38px 54px minmax(0,1fr) minmax(82px,120px);gap:0;padding:4px 3px}
+.vehicle .badge{justify-self:start;min-width:31px;max-width:42px}
+.row-order{padding-right:5px}.row-vehicle{padding-right:7px}.row-line{font-size:11px;font-weight:800;padding-right:2px}.row-dest{padding-right:8px}
+.vehicle-by-ev{grid-template-columns:54px 38px 38px minmax(0,1fr) minmax(82px,120px)}
+@media(min-width:800px){
+  .sheet{left:12px;right:auto;top:70px;bottom:auto;width:min(650px,calc(100vw - 24px));height:auto;max-height:calc(100dvh - 88px);transform:translateX(calc(-100% - 24px));transform-origin:left center}
+  .sheet.open{transform:translateX(0)}
+  .floating{left:18px;right:auto;bottom:18px}
+  .vehicle-list{flex:0 1 auto;max-height:calc(100dvh - 245px)}
+}
