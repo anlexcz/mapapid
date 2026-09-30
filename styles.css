@@ -30,3 +30,13 @@
   .floating{left:18px;right:auto;bottom:18px}
   .vehicle-list{flex:0 1 auto;max-height:calc(100dvh - 245px)}
 }
+
+/* Map controls + bottom-anchored desktop filter panel */
+@media(min-width:800px){
+  .sheet{top:auto!important;bottom:76px!important;max-height:calc(100dvh - 94px);transform:translateX(calc(-100% - 24px))}
+  .sheet.open{transform:translateX(0)}
+  .leaflet-top.leaflet-right{top:8px;right:8px}
+  .leaflet-control-zoom{display:flex!important;margin:0!important;border:1px solid #bbb!important;border-radius:7px!important;overflow:hidden;box-shadow:0 2px 8px #0002!important}
+  .leaflet-control-zoom a{width:32px!important;height:32px!important;line-height:31px!important;border:0!important;border-left:1px solid #ddd!important}
+  .leaflet-control-zoom a:first-child{border-left:0!important}
+}
