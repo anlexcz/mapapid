@@ -6,13 +6,14 @@
     "aliases": []
   },
   "DP PRAHA": {
-    "source_name": "DP PRAHA",
+    "source_name": "Dopravní podnik hl. m. Prahy",
     "name": "Dopravní podnik hl. m. Prahy, akciová společnost",
     "short_name": "DPP",
     "aliases": [
       "DPP",
       "Dopravní podnik hl. m. Prahy, akciová společnost",
-      "Dopravní podnik hlavního města Prahy"
+      "Dopravní podnik hlavního města Prahy",
+      "Dopravní podnik hl. m. Prahy"
     ]
   }
 }
