@@ -15,5 +15,42 @@
       "Dopravní podnik hlavního města Prahy",
       "Dopravní podnik hl. m. Prahy"
     ]
+  },
+  "STENBUS": {
+    "source_name": "STENBUS",
+    "name": "STENBUS s.r.o.",
+    "short_name": "STENBUS",
+    "aliases": [
+      "STENBUS s.r.o.",
+      "STENBUS, s.r.o."
+    ]
+  },
+  "ABOUT ME": {
+    "source_name": "ABOUT ME",
+    "name": "ABOUT ME s.r.o.",
+    "short_name": "ABOUT ME",
+    "aliases": [
+      "ABOUT ME s.r.o.",
+      "ABOUT ME, s.r.o."
+    ]
+  },
+  "MARTIN UHER bus": {
+    "source_name": "MARTIN UHER bus",
+    "name": "MARTIN UHER bus, s.r.o.",
+    "short_name": "MARTIN UHER bus",
+    "aliases": [
+      "MARTIN UHER bus, s.r.o.",
+      "MARTIN UHER bus s.r.o."
+    ]
+  },
+  "MARTIN UHER": {
+    "source_name": "MARTIN UHER",
+    "name": "Martin UHER, spol. s r.o.",
+    "short_name": "MARTIN UHER",
+    "aliases": [
+      "Martin UHER, spol. s r.o.",
+      "Martin Uher spol. s r.o.",
+      "Martin UHER, spol. s r. o."
+    ]
   }
 }
