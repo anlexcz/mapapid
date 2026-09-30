@@ -23,7 +23,7 @@ Aplikace běží na GitHub Pages a používá realtime Golemio přes Cloudflare 
 - PID GTFS `stop_times` zachovává zdrojové pořadí tripů. Build ukládá `source_order`, `trip_operation_type`, globální `sequence` a pozici tripu. To je základ pro budoucí rekonstrukci skutečného oběhu; `block_id` se pro PID nepovažuje za dostatečný.
 - `trip_operation_type`: 1 běžný spoj, 7 výjezd, 8 zátah, 9 přejezd v rámci linky, 10 přejezd na jinou linku. Hodnoty slouží jako pomocná informace/boundary check.
 - Vozidlo jedoucí k poslední zastávce ještě není „na konečné“. Stav konečné lze vyhlásit až po skutečném dosažení poslední zastávky (`last_stop`), nikoli pouze proto, že `next_stop` je poslední zastávka.
-- Stará poloha: do 5 minut normální marker; 5–10 minut utlumený/stale marker a informace o poslední známé poloze; po 10 minutách skrýt. Robustní uchování vozu, pokud úplně zmizí z realtime feedu, je samostatná věc k dořešení.
+- Stará poloha: do 5 minut normální marker; 5–10 minut utlumený/stale marker a informace o poslední známé poloze; po 10 minutách skrýt.\n- Pro pobyt na konečné se používá vazba z GTFS-RT `pid_feed.pb`: `vehicle.id` spojuje Vehicle Position s Trip Updates stejného fyzického vozidla. Pokud vozidlo po skutečném dosažení poslední zastávky zmizí z JSON Vehicle Positions, ale GTFS-RT mu stále přiřazuje další trip, mapa ho může až 30 minut ponechat na poslední skutečně nahlášené GPS souřadnici. Trip Update nikdy nevytváří ani neinterpoluje polohu. Bez potvrzeného pokračování platí běžný desetiminutový limit.
 - Pokud je spolehlivě znám konec výkonu/zátah, cílem je vozidlo po dokončení odstranit; nesmí se ale odstraňovat aktivní vůz jen na základě domněnky.
 
 ## Databáze vozidel
