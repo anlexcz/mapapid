@@ -4284,6 +4284,20 @@
       "traction": "trolleybus",
       "livery": "schéma PID, šedá s červenými svislými pruhy",
       "advertisement": null
+    },
+    {
+      "sa_id": 41129,
+      "operator": "Dopravní podnik hl. m. Prahy",
+      "ev": "2055",
+      "manufacturer": "Solaris",
+      "model": "Solaris Urbino 8,9 LE",
+      "depot": "Řepy",
+      "wheelchair_accessible": null,
+      "air_conditioned": true,
+      "usb_chargers": null,
+      "traction": "bus",
+      "livery": "městské schéma, červeno-bílá",
+      "advertisement": null
     }
   ]
 }
