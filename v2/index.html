@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>MapaPID v2 debug</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="./debug.css">
+</head>
+<body>
+  <div id="map"></div>
+  <header class="topbar">
+    <strong>MapaPID v2 · debug</strong>
+    <span id="status">Načítám…</span>
+    <button id="refresh" type="button">Obnovit</button>
+  </header>
+  <aside id="debugPanel" class="debug-panel" hidden>
+    <div class="debug-head">
+      <strong id="debugTitle">Vozidlo</strong>
+      <button id="debugClose" type="button" aria-label="Zavřít">×</button>
+    </div>
+    <pre id="debugBody"></pre>
+  </aside>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="../config.js"></script>
+  <script type="module" src="./debug-app.js"></script>
+</body>
+</html>
