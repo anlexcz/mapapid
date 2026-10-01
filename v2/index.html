@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <title>MapaPID v2 debug</title>
   <link id="leafletCss" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
-  <link rel="stylesheet" href="./debug.css">
+  <link rel="stylesheet" href="./debug.css?v=20261001-0656">
 </head>
 <body>
   <div id="map"></div>
@@ -34,9 +34,9 @@
     };
   </script>
   <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js" onerror="window.__loadLeafletFallback()"></script>
-  <script src="../config.js"></script>
+  <script src="../config.js?v=20261001-0656"></script>
   <script type="module">
-    import('./debug-app.js').catch(error=>{
+    import('./debug-app.js?v=20261001-0656').catch(error=>{
       console.error(error);
       document.getElementById('status').textContent='Chyba aplikace: '+error.message;
     });
