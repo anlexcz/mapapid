@@ -4,6 +4,6 @@
   "type": "module",
   "scripts": {
     "test": "node tests/core.test.mjs",
-    "check": "node --check core/identity.js && node --check core/operators.js && node --check core/normalize-golemio.js && node --check core/normalize-gtfsrt.js && node --check core/merge.js && node --check core/status.js"
+    "check": "node --check core/identity.js && node --check core/operators.js && node --check core/normalize-golemio.js && node --check core/normalize-gtfsrt.js && node --check core/merge.js && node --check core/status.js && node --check debug-app.js"
   }
 }
