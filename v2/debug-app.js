@@ -4,6 +4,16 @@ import {normalizeGtfsRt} from './core/normalize-gtfsrt.js';
 import {mergeVehicles} from './core/merge.js';
 import {deriveStatus} from './core/status.js';
 
+async function waitForLeaflet(timeoutMs=8000){
+  const started=Date.now();
+  while(!window.L){
+    if(Date.now()-started>timeoutMs)throw new Error('Leaflet se nepodařilo načíst');
+    await new Promise(resolve=>setTimeout(resolve,50));
+  }
+  return window.L;
+}
+
+const L=await waitForLeaflet();
 const C=window.MAPAPID_CONFIG||{};
 const map=L.map('map',{zoomControl:true}).setView([50.0755,14.4378],12);
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© OpenStreetMap',maxZoom:19}).addTo(map);
@@ -38,12 +48,10 @@ function renderMarkers(){
       marker.on('click',()=>openDebug(id));
       marker._v2key=key;
       markers.set(id,marker);
-    }else{
-      if(marker._v2key!==key){
-        marker.setLatLng([lat,lon]);
-        marker.setIcon(L.divIcon({className:'',html,iconSize:[30,30]}));
-        marker._v2key=key;
-      }
+    }else if(marker._v2key!==key){
+      marker.setLatLng([lat,lon]);
+      marker.setIcon(L.divIcon({className:'',html,iconSize:[30,30]}));
+      marker._v2key=key;
     }
   }
   for(const [id,marker] of markers){
