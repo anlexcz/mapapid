@@ -30,3 +30,14 @@ export function freshnessFromAge(ageSeconds,{staleAfter=300,hideAfter=600}={}){
   if(ageSeconds>=staleAfter)return 'stale';
   return 'live';
 }
+
+export function deriveStatus(vehicle,{now=Date.now(),tripStops=[]}={}){
+  const atTerminal=inferTerminalState(vehicle,{tripStops});
+  if(vehicle?.position?.source==='gtfsrt'||vehicle?.status?.freshness==='retained'){
+    return {freshness:'retained',atTerminal};
+  }
+
+  const observedMs=Date.parse(vehicle?.position?.observedAt||'');
+  const ageSeconds=Number.isFinite(observedMs)?Math.max(0,(now-observedMs)/1000):NaN;
+  return {freshness:freshnessFromAge(ageSeconds),atTerminal};
+}
