@@ -1,7 +1,7 @@
 name: Deploy GitHub Pages
 on:
   push:
-    branches: [main]
+    branches: [main, mapapid-v2]
   workflow_dispatch:
   workflow_run:
     workflows: ["Update PID GTFS"]
