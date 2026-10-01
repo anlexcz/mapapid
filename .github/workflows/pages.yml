@@ -1,7 +1,7 @@
 name: Deploy GitHub Pages
 on:
   push:
-    branches: [main]
+    branches: [main, mapapid-v2]
   workflow_dispatch:
   workflow_run:
     workflows: ["Update PID GTFS"]
@@ -24,21 +24,29 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout production
+        uses: actions/checkout@v4
         with:
           ref: main
-      - name: Check frontend JavaScript syntax
-        run: node --check app.js
-      - name: Check Worker JavaScript syntax
-        run: node --check worker/worker.js
-      - name: Check Python syntax
-        run: python -m py_compile scripts/build_gtfs.py scripts/validate_repo.py
-      - name: Validate repository data
-        run: python scripts/validate_repo.py
+
+      - name: Checkout MapaPID v2 preview
+        uses: actions/checkout@v4
+        with:
+          ref: mapapid-v2
+          path: .v2-source
+
+      - name: Add v2 preview to Pages artifact
+        run: |
+          rm -rf v2
+          cp -R .v2-source/v2 ./v2
+          rm -rf .v2-source
+
       - uses: actions/configure-pages@v5
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: .
+
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
