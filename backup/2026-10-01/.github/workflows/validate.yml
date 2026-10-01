@@ -1,0 +1,30 @@
+name: Validate MapaPID
+
+on:
+  push:
+    branches: [main, stabilize-realtime-core-1-4]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check frontend JavaScript syntax
+        run: node --check app.js
+
+      - name: Check Worker JavaScript syntax
+        run: node --check worker/worker.js
+
+      - name: Check Python syntax
+        run: python -m py_compile scripts/build_gtfs.py scripts/validate_repo.py
+
+      - name: Validate repository data
+        run: python scripts/validate_repo.py

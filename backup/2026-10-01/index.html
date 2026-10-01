@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="cs"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#f7f7f5"><title>MapaPID</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"><link rel="stylesheet" href="./styles.css"></head>
+<body><div id="map"></div>
+<header><strong>MapaPID</strong><div class="rt"><span id="refreshDot"></span><span id="refreshMini">…</span><button id="settingsBtn" title="Nastavení">⚙</button><button id="locate" title="Moje poloha">◎</button></div></header>
+<div class="map-actions"><button id="filterBtn" class="floating action-filter" title="Filtry">⌕</button><button id="vehiclesBtn" class="floating action-vehicles" title="Vozidla PID">☰ <span id="count">0</span></button></div>
+<section id="filterSheet" class="sheet filter-sheet"><div class="grab"></div><div class="sheet-head"><b>Filtry</b><button id="closeFilters">×</button></div>
+<input id="search" placeholder="Linka, pořadí, vůz…" autocomplete="off">
+<div class="chips"><button data-type="">Vše</button><button data-type="tramvaj">Tramvaje</button><button data-type="autobus">Autobusy</button><button data-type="trolejbus">Trolejbusy</button><button data-type="metro">Metro</button></div>
+<div class="filters"><select id="operator"><option value="">Všichni dopravci</option></select><select id="vehicleType"><option value="">Všechny typy vozů</option></select><input id="line" placeholder="Linka"><input id="order" placeholder="Pořadí"></div>
+<label class="setting">Hlavní údaj markeru <select id="markerPrimary"><option value="line">Linka</option><option value="ev">Evidenční číslo</option></select></label></section>
+<section id="sheet" class="sheet vehicle-sheet"><div class="grab"></div><div class="sheet-head"><b>Vozidla PID</b><button id="closeSheet">×</button></div>
+<div id="status" class="status">Načítám…</div><div id="list" class="vehicle-list"></div></section>
+<section id="vehicleCard" class="vehicle-card" hidden></section><section id="settingsPanel" class="settings-panel" hidden><div><b>Nastavení mapy</b><button id="closeSettings">×</button></div><label>Hlavní údaj markeru <select id="markerPrimaryTop"><option value="line">Linka</option><option value="ev">Evidenční číslo</option></select></label></section>
+<section id="tripPage" class="trip-page" hidden><div class="page-head"><button id="backTrip">‹ Mapa</button><b id="tripTitle">Detail spoje</b></div><div id="tripPageBody"></div></section>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script src="./config.js"></script><script src="./app.js"></script></body></html>

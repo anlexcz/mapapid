@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "files": [
+    "lamer.json",
+    "dpp-klicov.json",
+    "dpp-repy.json",
+    "dpp-kacerov.json",
+    "dpp-hostivar.json",
+    "dpp-vrsovice.json",
+    "stenbus.json",
+    "about-me.json",
+    "martin-uher-bus.json",
+    "martin-uher.json",
+    "csad-polkost.json",
+    "ad-stredni-cechy.json",
+    "akv-bus.json",
+    "arriva-autobusy.json",
+    "autobusova-doprava-kohout.json",
+    "busline-jizni-cechy.json",
+    "busline-khk.json",
+    "arriva-city.json",
+    "arriva-stredni-cechy.json"
+  ]
+}

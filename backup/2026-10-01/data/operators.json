@@ -1,0 +1,159 @@
+{
+  "Autodoprava Lamer": {
+    "source_name": "Autodoprava Lamer",
+    "name": "Autodoprava Lamer",
+    "short_name": null,
+    "aliases": []
+  },
+  "DP PRAHA": {
+    "source_name": "Dopravní podnik hl. m. Prahy",
+    "name": "Dopravní podnik hl. m. Prahy, akciová společnost",
+    "short_name": "DPP",
+    "aliases": [
+      "DPP",
+      "Dopravní podnik hl. m. Prahy, akciová společnost",
+      "Dopravní podnik hlavního města Prahy",
+      "Dopravní podnik hl. m. Prahy"
+    ]
+  },
+  "STENBUS": {
+    "source_name": "STENBUS",
+    "name": "STENBUS s.r.o.",
+    "short_name": "STENBUS",
+    "aliases": [
+      "STENBUS s.r.o.",
+      "STENBUS, s.r.o."
+    ]
+  },
+  "ABOUT ME": {
+    "source_name": "ABOUT ME",
+    "name": "ABOUT ME s.r.o.",
+    "short_name": "ABOUT ME",
+    "aliases": [
+      "ABOUT ME s.r.o.",
+      "ABOUT ME, s.r.o."
+    ]
+  },
+  "MARTIN UHER bus": {
+    "source_name": "MARTIN UHER bus",
+    "name": "MARTIN UHER bus, s.r.o.",
+    "short_name": "MARTIN UHER bus",
+    "aliases": [
+      "MARTIN UHER bus, s.r.o.",
+      "MARTIN UHER bus s.r.o."
+    ]
+  },
+  "MARTIN UHER": {
+    "source_name": "MARTIN UHER",
+    "name": "Martin UHER, spol. s r.o.",
+    "short_name": "MARTIN UHER",
+    "aliases": [
+      "Martin UHER, spol. s r.o.",
+      "Martin Uher spol. s r.o.",
+      "Martin UHER, spol. s r. o."
+    ]
+  },
+  "ČSAD POLKOST": {
+    "source_name": "ČSAD POLKOST",
+    "name": "ČSAD POLKOST, spol. s r.o.",
+    "short_name": "ČSAD POLKOST",
+    "aliases": [
+      "ČSAD POLKOST, spol. s r.o.",
+      "ČSAD POLKOST, spol. s r. o.",
+      "ČSAD POLKOST spol. s r.o."
+    ]
+  },
+  "AD STŘEDNÍ ČECHY": {
+    "source_name": "AD STŘEDNÍ ČECHY",
+    "name": "AD STŘEDNÍ ČECHY s.r.o.",
+    "short_name": "AD STŘEDNÍ ČECHY",
+    "aliases": [
+      "AD STŘEDNÍ ČECHY s.r.o.",
+      "AD STŘEDNÍ ČECHY, s.r.o."
+    ]
+  },
+  "AKV bus": {
+    "source_name": "AKV bus",
+    "name": "AKV bus a.s.",
+    "short_name": "AKV bus",
+    "aliases": [
+      "AKV bus a.s.",
+      "AKV bus a. s.",
+      "AKV BUS (Střední Čechy)"
+    ]
+  },
+  "ARRIVA autobusy": {
+    "source_name": "ARRIVA autobusy",
+    "name": "ARRIVA autobusy a.s.",
+    "short_name": "ARRIVA autobusy",
+    "aliases": [
+      "ARRIVA autobusy a.s.",
+      "ARRIVA autobusy, a.s.",
+      "ARRIVA autobusy a. s.",
+      "ARRIVA AUTOBUSY (Čáslav)"
+    ]
+  },
+  "ARRIVA CITY": {
+    "source_name": "ARRIVA CITY",
+    "name": "ARRIVA CITY a.s.",
+    "short_name": "ARRIVA CITY",
+    "aliases": [
+      "ARRIVA CITY a.s.",
+      "ARRIVA CITY, a.s.",
+      "ARRIVA CITY a. s.",
+      "ARRIVA CITY s.r.o.",
+      "ARRIVA CITY, s.r.o.",
+      "ARRIVA CITY (Jílové u Prahy)",
+      "ARRIVA CITY (Kladno)",
+      "ARRIVA CITY (Malešice)"
+    ]
+  },
+  "ARRIVA STŘEDNÍ ČECHY": {
+    "source_name": "ARRIVA STŘEDNÍ ČECHY",
+    "name": "ARRIVA STŘEDNÍ ČECHY s.r.o.",
+    "short_name": "ARRIVA STŘEDNÍ ČECHY",
+    "aliases": [
+      "ARRIVA STŘEDNÍ ČECHY s.r.o.",
+      "ARRIVA STŘEDNÍ ČECHY, s.r.o.",
+      "ARRIVA STŘEDNÍ ČECHY s. r. o.",
+      "ARRIVA SČ (Hořovice)",
+      "ARRIVA SČ (Králův Dvůr)",
+      "ARRIVA SČ (Mladá Boleslav)",
+      "ARRIVA SČ (Příbram)"
+    ]
+  },
+  "Autobusová doprava Kohout": {
+    "source_name": "Autobusová doprava Kohout",
+    "name": "Autobusová doprava Kohout s.r.o.",
+    "short_name": "Autobusová doprava Kohout",
+    "aliases": [
+      "Autobusová doprava Kohout s.r.o.",
+      "Autobusová doprava Kohout, s.r.o.",
+      "Autobusová doprava Kohout s. r. o.",
+      "AUT. DOPRAVA KOHOUT"
+    ]
+  },
+  "BusLine jižní Čechy": {
+    "source_name": "BusLine jižní Čechy",
+    "name": "BusLine jižní Čechy s.r.o.",
+    "short_name": "BusLine jižní Čechy",
+    "aliases": [
+      "BusLine jižní Čechy s.r.o.",
+      "BusLine jižní Čechy, s.r.o.",
+      "BusLine jižní Čechy s. r. o.",
+      "BUSLINE JČ (Tábor)"
+    ]
+  },
+  "BusLine KHK": {
+    "source_name": "BusLine KHK",
+    "name": "BusLine KHK s.r.o.",
+    "short_name": "BusLine KHK",
+    "aliases": [
+      "BusLine KHK s.r.o.",
+      "BusLine KHK, s.r.o.",
+      "BusLine KHK s. r. o.",
+      "BUSLINE KHK (Jičín)",
+      "BUSLINE KHK (Hradec Králové)"
+    ]
+  }
+}
