@@ -2,7 +2,7 @@ name: Validate MapaPID
 
 on:
   push:
-    branches: [main, stabilize-realtime-core-1-4]
+    branches: [main, stabilize-realtime-core-1-4, mapapid-v2]
   pull_request:
     branches: [main]
   workflow_dispatch:
@@ -28,3 +28,11 @@ jobs:
 
       - name: Validate repository data
         run: python scripts/validate_repo.py
+
+      - name: Check MapaPID v2 modules
+        working-directory: v2
+        run: npm run check
+
+      - name: Test MapaPID v2 core
+        working-directory: v2
+        run: npm test
