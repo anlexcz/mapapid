@@ -1,8 +1,8 @@
-import {buildOperatorAliasMap} from './core/operators.js';
-import {normalizeGolemio} from './core/normalize-golemio.js';
-import {normalizeGtfsRt} from './core/normalize-gtfsrt.js';
-import {mergeVehicles} from './core/merge.js';
-import {deriveStatus} from './core/status.js';
+import {buildOperatorAliasMap} from './core/operators.js?v=20261001-0656';
+import {normalizeGolemio} from './core/normalize-golemio.js?v=20261001-0656';
+import {normalizeGtfsRt} from './core/normalize-gtfsrt.js?v=20261001-0656';
+import {mergeVehicles} from './core/merge.js?v=20261001-0656';
+import {deriveStatus} from './core/status.js?v=20261001-0656';
 
 async function waitForLeaflet(timeoutMs=8000){
   const started=Date.now();
