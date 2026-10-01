@@ -4,6 +4,7 @@ import {buildOperatorAliasMap} from '../core/operators.js';
 import {normalizeGolemio} from '../core/normalize-golemio.js';
 import {normalizeGtfsRt} from '../core/normalize-gtfsrt.js';
 import {mergeVehicles} from '../core/merge.js';
+import {inferTerminalState,freshnessFromAge} from '../core/status.js';
 
 const operators={
   'DP PRAHA':{
@@ -50,6 +51,7 @@ function gtfs8488(timestamp=1790811055){return{
   assert.equal(merged[0].position.source,'gtfsrt');
   assert.equal(merged[0].status.freshness,'retained');
   assert.equal(merged[0].status.atTerminal,null,'GTFS-RT fallback must not imply terminal');
+  assert.equal(inferTerminalState(merged[0]),null,'retained alone must never infer terminal');
 }
 
 {
@@ -57,6 +59,24 @@ function gtfs8488(timestamp=1790811055){return{
   const rt=normalizeGtfsRt(gtfs8488(1999999999),{operatorAliasMap});
   const merged=mergeVehicles([json],[rt]);
   assert.equal(merged[0].position.source,'json','newer GTFS-RT timestamp must not override JSON source priority');
+}
+
+{
+  const json=normalizeGolemio(golemio8488(),{operatorAliasMap});
+  json.extra.statePosition='before_track';
+  assert.equal(inferTerminalState(json),true,'before_track is explicit terminal evidence');
+}
+
+{
+  const rt=normalizeGtfsRt({...gtfs8488(),currentStopSequence:12},{operatorAliasMap});
+  assert.equal(inferTerminalState(rt,{tripStops:[{s:1},{s:12}]}),true);
+  assert.equal(inferTerminalState({...rt,extra:{...rt.extra,currentStopSequence:5}},{tripStops:[{s:1},{s:12}]}),false);
+}
+
+{
+  assert.equal(freshnessFromAge(20),'live');
+  assert.equal(freshnessFromAge(400),'stale');
+  assert.equal(freshnessFromAge(700),'expired');
 }
 
 {
