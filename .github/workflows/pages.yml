@@ -1,10 +1,10 @@
 name: Deploy GitHub Pages
 on:
   push:
-    branches: [main, mapapid-v2]
+    branches: [main]
   workflow_dispatch:
   workflow_run:
-    workflows: ["Update PID GTFS"]
+    workflows: ["Update PID GTFS", "Validate MapaPID"]
     types: [completed]
 
 permissions:
@@ -18,7 +18,20 @@ concurrency:
 
 jobs:
   deploy:
-    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
+    if: >-
+      ${{
+        github.event_name != 'workflow_run' ||
+        (
+          github.event.workflow_run.conclusion == 'success' &&
+          (
+            github.event.workflow_run.name == 'Update PID GTFS' ||
+            (
+              github.event.workflow_run.name == 'Validate MapaPID' &&
+              github.event.workflow_run.head_branch == 'mapapid-v2'
+            )
+          )
+        )
+      }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
