@@ -160,3 +160,25 @@ Kontrola výjimek zahrnuje **1403 (SA ID 45251)**, jehož detail uvádí nasazen
 
 ## Pokrytí po doplnění pěti dopravců
 Pět katalogů přidává 621 vozidlových identit. Manifest načítá 19 souborů s celkem 2 231 identitami. Kontrola načítání a párování v aktuálních funkcích aplikace ověřila všechny záznamy a nakonfigurované aliasy bez duplicit ID nebo klíčů dopravce + trakce + evidenční číslo. Centrální slovník obsahuje plné firemní názvy i regionální aliasy doložené ve [veřejném přehledu vypravení PID](https://pid.8b.cz/dopravci.php), včetně ARRIVA CITY (Kladno), ARRIVA SČ (Příbram), AUT. DOPRAVA KOHOUT, BUSLINE JČ (Tábor) a BUSLINE KHK (Jičín). Tyto aliasy zůstávají přiřazené jednotlivým společnostem. Bezbariérovost ani další výbava se neodhadují podle modelu; neznámé hodnoty zůstávají `null`. Nátěry se přebírají celé z aktuálních záznamů detailu a výslovné reklamy se zapisují také samostatně. Jde o statický snímek evidence a kontrolu párovacích funkcí, nikoli živý test realtime feedu nebo potvrzení aktuálního vypravení všech uvedených vozů. Další nezpracovaný autobusový dopravce podle abecedy je BusLine LK.
+
+## Vozy – dávka pěti menších dopravců (7. 10. 2026)
+
+Katalogy byly vytvořeny ze všech stránek současných přehledů autobusů, elektrobusů a trolejbusů přes [sa-proxy](https://sa-proxy.kojban.cz). Ověřeny jsou detaily všech 69 provozních vozů z těchto přehledů; každý přehled se vešel na jednu stránku. Do katalogu je zahrnuto 61 vozů s jednoznačným současným evidenčním číslem PID. Osm vozů bez současného čísla se nezařazuje. Ukončená čísla ani římské označení generace se nepřebírají.
+
+| Soubor | Dopravce | Vozy | Provozovna |
+| --- | --- | ---: | --- |
+| `ekoservis-transpeed.json` | EKOSERVIS TRANSPEED | 11 | neuvedena |
+| `kokorinsky-sok.json` | Kokořínský SOK | 8 | neuvedena |
+| `lextrans-bus.json` | LEXTRANS BUS | 3 | neuvedena |
+| `lutan.json` | Lutan | 28 | Benátecká Vrutice (20), Kutná Hora (8) |
+| `pohl-kladno.json` | POHL Kladno | 11 | neuvedena |
+
+- **EKOSERVIS TRANSPEED**: [provozní přehled](https://sa-proxy.kojban.cz/seznam?iddopravce=16771&prov=1&trakce=autobus&vcetneSluzebnich=1). Všech 11 vozů je pronajato od ČSAD Střední Čechy a evidováno pouze podle současného provozovatele EKOSERVIS TRANSPEED. Provozovna vlastníka Mělník se za provozovnu nájemce nedosazuje (`depot: null`). Při budoucím zpracování ČSAD Střední Čechy nesmějí být zahrnuty podruhé. Všech 11 vozů má výslovně potvrzenou klimatizaci pro cestující; vůz 8002 má i reklamní celolep zádi.
+- **Kokořínský SOK**: [provozní přehled](https://sa-proxy.kojban.cz/seznam?iddopravce=1102&prov=1&trakce=autobus&vcetneSluzebnich=1). Z deseti vozů má současné číslo osm (1358, 1359, 1361–1366). Vozy SA ID 56558 a 58451 nemají současné číslo; 1357 u druhého skončilo v listopadu 2024. U osmi zahrnutých vozů je potvrzena klimatizace a u čtyř USB.
+- **LEXTRANS BUS**: [provozní přehled](https://sa-proxy.kojban.cz/seznam?iddopravce=346&prov=1&trakce=autobus&vcetneSluzebnich=1). Ze sedmi vozů jsou zahrnuty pouze 1340, 1342 a 1344. Čtyři ostatní vozy nemají současné číslo. Všechny tři zahrnuté vozy mají potvrzenou klimatizaci.
+- **Lutan**: [provozní přehled autobusů](https://sa-proxy.kojban.cz/seznam?iddopravce=9259&prov=1&trakce=autobus&vcetneSluzebnich=1) a samostatný přehled elektrobusů. Zahrnuje 21 autobusů a sedm elektrobusů MAN s čísly 1822–1828; všechny mají trakci `bus`. Aktuální provozovna je ověřena v detailu. U vozu 1810 je aktuální číslo odlišeno od samostatné položky názvu Kněžmost; provozovna podle detailu zůstává Benátecká Vrutice. Zahrnut je i vůz 1800 s bílým nátěrem podle současné identity a provozovny pro linky PID. U 26 vozů je potvrzena klimatizace a u šesti USB.
+- **POHL Kladno**: [provozní přehled](https://sa-proxy.kojban.cz/seznam?iddopravce=593&prov=1&trakce=autobus&vcetneSluzebnich=1). Ze 13 vozů jsou zahrnuty 1251–1255 a 1259–1264. Vůz SA ID 38140 má číslo 1256 ukončené v roce 2024; nečíslovaný Magelys SA ID 102157 se také nezařazuje. Všech 11 zahrnutých vozů má potvrzenou klimatizaci, vůz 1260 také USB.
+
+Nezjištěná výbava zůstává `null`; bezbariérovost se neodvozuje z typu. Nátěry se přebírají celé z aktuálních záznamů, reklamní polepy se evidují také samostatně. Plné názvy společností jsou ověřeny v oficiálních profilech PID a aliasy včetně KOKOŘÍNSKÝ SOK, LUTAN a POHL KLADNO odpovídají [přehledu vypravení](https://pid.8b.cz/dopravci.php). Všechny nové identity byly ověřeny skutečnými funkcemi načítání a párování aplikace, včetně oddělení dopravců a trakcí a jedinečnosti SA ID.
+
+Manifest nyní načítá 24 souborů s 2 292 vozidlovými identitami od 20 dopravců. Jde o statický snímek evidence, nikoli automatickou synchronizaci nebo živý test realtime feedu. Dávka doplňuje menší dopravce mimo dosavadní abecední pořadí; dalším nezpracovaným dopravcem podle abecedy zůstává BusLine LK.

@@ -1,0 +1,47 @@
+{
+  "operator": "LEXTRANS BUS",
+  "vehicles": [
+    {
+      "sa_id": 148167,
+      "operator": "LEXTRANS BUS",
+      "ev": "1340",
+      "manufacturer": "ROŠERO - P",
+      "model": "ROŠERO - P First FCLLI XL",
+      "depot": null,
+      "wheelchair_accessible": null,
+      "air_conditioned": true,
+      "usb_chargers": null,
+      "traction": "bus",
+      "livery": "schéma PID, šedá s červenými svislými pruhy",
+      "advertisement": null
+    },
+    {
+      "sa_id": 110228,
+      "operator": "LEXTRANS BUS",
+      "ev": "1342",
+      "manufacturer": "Iveco",
+      "model": "Iveco Crossway LE LINE 10,8M",
+      "depot": null,
+      "wheelchair_accessible": null,
+      "air_conditioned": true,
+      "usb_chargers": null,
+      "traction": "bus",
+      "livery": "schéma PID, šedá s červenými svislými pruhy",
+      "advertisement": null
+    },
+    {
+      "sa_id": 97766,
+      "operator": "LEXTRANS BUS",
+      "ev": "1344",
+      "manufacturer": "Iveco",
+      "model": "Iveco Crossway LE LINE 12M",
+      "depot": null,
+      "wheelchair_accessible": null,
+      "air_conditioned": true,
+      "usb_chargers": null,
+      "traction": "bus",
+      "livery": "schéma PID, šedá s červenými svislými pruhy",
+      "advertisement": null
+    }
+  ]
+}

@@ -19,6 +19,11 @@
     "busline-jizni-cechy.json",
     "busline-khk.json",
     "arriva-city.json",
-    "arriva-stredni-cechy.json"
+    "arriva-stredni-cechy.json",
+    "ekoservis-transpeed.json",
+    "kokorinsky-sok.json",
+    "lextrans-bus.json",
+    "lutan.json",
+    "pohl-kladno.json"
   ]
 }

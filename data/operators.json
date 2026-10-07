@@ -155,5 +155,53 @@
       "BUSLINE KHK (Jičín)",
       "BUSLINE KHK (Hradec Králové)"
     ]
+  },
+  "EKOSERVIS TRANSPEED": {
+    "source_name": "EKOSERVIS TRANSPEED",
+    "name": "EKOSERVIS TRANSPEED, a.s.",
+    "short_name": "EKOSERVIS TRANSPEED",
+    "aliases": [
+      "EKOSERVIS TRANSPEED, a.s.",
+      "EKOSERVIS TRANSPEED"
+    ]
+  },
+  "Kokořínský SOK": {
+    "source_name": "Kokořínský SOK",
+    "name": "Kokořínský SOK s.r.o.",
+    "short_name": "Kokořínský SOK",
+    "aliases": [
+      "Kokořínský SOK s.r.o.",
+      "Kokořínský SOK s. r. o.",
+      "KOKOŘÍNSKÝ SOK"
+    ]
+  },
+  "LEXTRANS BUS": {
+    "source_name": "LEXTRANS BUS",
+    "name": "LEXTRANS BUS s.r.o.",
+    "short_name": "LEXTRANS BUS",
+    "aliases": [
+      "LEXTRANS BUS s.r.o.",
+      "LEXTRANS BUS s. r. o.",
+      "LEXTRANS BUS"
+    ]
+  },
+  "Lutan": {
+    "source_name": "Lutan",
+    "name": "Lutan s.r.o.",
+    "short_name": "Lutan",
+    "aliases": [
+      "Lutan s.r.o.",
+      "Lutan s. r. o.",
+      "LUTAN"
+    ]
+  },
+  "POHL Kladno": {
+    "source_name": "POHL Kladno",
+    "name": "POHL Kladno spol. s r.o.",
+    "short_name": "POHL Kladno",
+    "aliases": [
+      "POHL Kladno spol. s r.o.",
+      "POHL KLADNO"
+    ]
   }
 }
